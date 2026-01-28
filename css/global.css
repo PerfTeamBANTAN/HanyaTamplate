@@ -1,1 +1,15 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #0d1117;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+.text-secondary {
+  color: #9ca3af !important;
+}
 
