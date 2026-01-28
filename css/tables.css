@@ -1,21 +1,245 @@
-.table {
-  border-radius: 14px;
-  overflow: hidden;
-  box-shadow:
-    0 4px 15px rgba(15,23,42,0.05);
+/* ==========================
+   TABLES
+   ========================== */
+
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #333333;
 }
 
-.table th {
-  background: linear-gradient(90deg, var(--grad-dark-1), var(--grad-dark-2));
-  color: #fff;
-  font-weight: 600;
+table th {
+    background: #1a2a6c; /* Gradien gelap bisa ditambahkan via gradient pada header */
+    color: #FFFFFF;
+    padding: 0.5rem;
 }
 
-.table td {
-  background: #ffffff;
+table td {
+    padding: 0.5rem;
+    border-bottom: 1px solid #adb5bd; /* garis netral */
+}
+
+table tr:hover td {
+    background-color: #f1f1f1;
+}
+
+/* =========================
+   ALERT SQM TABLE
+========================= */
+
+#alert-table-head th {
+  background: linear-gradient(180deg, var(--grad-start), var(--grad-end));
+  color: #ffffff;
+  font-size: 12px;
+  text-align: center;
+}
+
+#alert-table-body td {
+  font-size: 12px;
   color: var(--text-main);
 }
 
-.table tr:hover td {
-  background: #f1f5ff;
+#alert-table-body tr:hover {
+  background-color: #f5f9fb;
+}
+
+/* alert cell */
+#alert-table-body td.table-danger {
+  background-color: rgba(239,83,80,0.15);
+  color: var(--danger);
+}
+
+/* link alert */
+#alert-table-body a {
+  text-decoration: none;
+  color: var(--accent);
+}
+
+#alert-table-body a:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   ASGAR HSI TABLE
+========================= */
+
+#asgar-hsi-table-head th {
+  background: linear-gradient(180deg, var(--grad-start), var(--grad-end));
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+#asgar-hsi-table-body td {
+  font-size: 12px;
+  color: var(--text-main);
+}
+
+#asgar-hsi-table-body tr:hover {
+  background-color: #f5f9fb;
+}
+
+/* clickable links */
+#asgar-hsi-table-body a {
+  text-decoration: none;
+  font-weight: 700;
+}
+
+#asgar-hsi-table-body a.text-danger {
+  color: var(--danger);
+}
+
+#asgar-hsi-table-body a.text-info {
+  color: var(--accent);
+}
+
+#asgar-hsi-table-body a.text-primary {
+  color: var(--accent);
+}
+
+/* =========================
+   MODAL DETAIL TABLE (ASGAR)
+========================= */
+
+#tiket-hi-head th {
+  background: linear-gradient(180deg, var(--grad-start), var(--grad-end));
+  color: #fff;
+  font-size: 12px;
+}
+
+#tiket-hi-body td {
+  font-size: 12px;
+  color: var(--text-main);
+}
+
+/* =========================
+   dashboard-b2b
+========================= */
+.ttr-table .table-danger {
+  background-color: #EF5350 !important;
+  color: #fff;
+}
+
+.kpi-th {
+  background: #f8f9fa;
+}
+
+.kpi-td {
+  font-size: 13px;
+}
+
+.kpi-not-ach {
+  background: rgba(239,83,80,.15);
+  color: #EF5350;
+  font-weight: 700;
+}
+
+/* ===== DISTRICT BANTEN TABLE ===== */
+.tr-pragnosa-bad {
+  background-color: rgba(239,83,80,.15) !important;
+  color: #333333;
+  font-weight: 600;
+}
+
+.table-empty {
+  text-align: center;
+  color: #adb5bd;
+  padding: 12px;
+}
+
+.link-tiket-hi {
+  color: #00BCD4;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.link-tiket-hi:hover {
+  text-decoration: underline;
+}
+
+/* =========================
+   TABLE INTERACTION (GLOBAL)
+========================= */
+
+td.clickable {
+  cursor: pointer;
+  transition: background .15s ease,
+              color .15s ease,
+              transform .08s ease;
+}
+
+td.clickable:hover {
+  background: rgba(0,0,0,.04);
+}
+
+td.clickable:active {
+  transform: scale(.97);
+  box-shadow: inset 0 0 0 1px rgba(0,0,0,.15);
+}
+
+/* hover row */
+.table-hover tbody tr:hover td {
+  background: rgba(0,0,0,.02);
+}
+
+/* angka sejajar */
+td {
+  font-variant-numeric: tabular-nums;
+}
+
+td.zero {
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+/* modal table hover */
+.modal table tbody tr:hover td {
+  background: rgba(0,0,0,.03);
+}
+
+/* =========================
+   TTR TABLE BASE
+========================= */
+
+.ttr-group-row th {
+  background: linear-gradient(90deg, #1a2a6c, #b21f1f);
+  color: #fff;
+  text-align: center;
+  font-weight: 700;
+}
+
+.ttr-sub-row th {
+  background: #f8f9fa;
+  color: #333;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.grp-start {
+  border-left: 2px solid #1a2a6c !important;
+}
+
+.grp-end {
+  border-right: 2px solid #b21f1f !important;
+}
+
+.col-percent {
+  text-align: center;
+  font-weight: 600;
+}
+
+.col-ticket {
+  text-align: center;
+}
+
+.col-sto,
+.col-witel {
+  font-weight: 700;
+  background: #fff;
+}
+
+/* hover row */
+#ttr-table-body tr:hover td {
+  background: rgba(0,0,0,0.03);
 }
