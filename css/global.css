@@ -27,11 +27,16 @@
 
 body {
   margin: 0;
-  font-family: "Poppins", sans-serif;
-  background: var(--bg-light);
-  color: var(--text-dark);
+  font-family: "Inter", "Poppins", sans-serif;
+  background: var(--bg-main);
+  color: var(--text-main);
 }
 
-img {
-  max-width: 100%;
+h1,h2,h3,h4 {
+  font-weight: 600;
 }
+
+.text-muted {
+  color: var(--text-muted) !important;
+}
+
