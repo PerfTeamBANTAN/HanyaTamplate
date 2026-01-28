@@ -167,6 +167,13 @@ function showUnderConstruction() {
   `;
 }
 
+document.querySelectorAll(".menu-link").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();
+    loadPage(el.dataset.menu);
+  });
+});
+  
 document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
   el.addEventListener('click', function (e) {
     e.preventDefault();
