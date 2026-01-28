@@ -1,5 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
+/* ===== PILIH TEMA WARNA ===== */
+/* 1 = Blue–Purple */
+/* 2 = Green–Cyan */
+/* 3 = Pink–Purple */
+/* 4 = Rainbow Neon */
+
 :root {
   --neon-blue: #00e5ff;
   --neon-purple: #8b5cf6;
