@@ -1,58 +1,183 @@
+/* =====================================================
+   PREMIUM NAVBAR – PERFORMANCE BAN-TAN
+===================================================== */
+
+:root {
+  --nav-grad-1: #0f2027;
+  --nav-grad-2: #203a43;
+  --nav-grad-3: #2c5364;
+
+  --nav-accent: #38bdf8;
+  --nav-hover: #a78bfa;
+  --nav-text: #ffffff;
+}
+
+/* ================= NAVBAR BASE ================= */
+
 .navbar {
-  background: linear-gradient(90deg, var(--grad-dark-1), var(--grad-dark-2));
-  box-shadow:
-    0 4px 20px rgba(0,0,0,0.4),
-    inset 0 0 1px rgba(255,255,255,0.1);
+  background: linear-gradient(90deg, var(--nav-grad-1), var(--nav-grad-2), var(--nav-grad-3));
+  box-shadow: 0 6px 24px rgba(0,0,0,0.35);
+  padding: 0.6rem 1.2rem;
+  position: relative;
+  z-index: 1000;
 }
 
 .navbar-brand {
-  font-weight: 600;
-  letter-spacing: .5px;
-  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 0.8px;
+  color: var(--nav-text) !important;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+.navbar-brand img {
+  filter: drop-shadow(0 0 6px rgba(255,255,255,0.3));
+}
+
+/* ================= NAV LINKS ================= */
+
 .navbar-nav .nav-link {
-  color: rgba(255,255,255,0.85) !important;
+  color: rgba(255,255,255,0.9) !important;
   margin-right: 12px;
-  transition: 0.3s;
+  padding: 8px 14px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .navbar-nav .nav-link:hover {
-  color: var(--accent-cyan) !important;
+  background: linear-gradient(90deg, rgba(56,189,248,0.2), rgba(167,139,250,0.2));
+  color: var(--nav-accent) !important;
+  box-shadow: 0 0 10px rgba(56,189,248,0.4);
 }
 
-/* dropdown */
+/* ================= DROPDOWN MAIN ================= */
+
 .dropdown-menu {
   background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
   border-radius: 14px;
-  border: 1px solid rgba(139,92,246,0.25);
-  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  border: 1px solid rgba(56,189,248,0.3);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+  padding: 10px;
+  animation: dropdownFade 0.25s ease;
+  overflow: visible;
+  z-index: 1050;
 }
 
+@keyframes dropdownFade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= DROPDOWN ITEM ================= */
+
 .dropdown-item {
-  color: var(--text-main);
-  border-radius: 8px;
+  border-radius: 10px;
+  padding: 8px 14px;
+  color: #1f2933;
+  transition: all 0.25s ease;
+  font-size: 0.92rem;
 }
 
 .dropdown-item:hover {
   background: linear-gradient(90deg, #e0f2fe, #ede9fe);
+  color: #0f172a;
+  transform: translateX(3px);
 }
 
-/* =========================
-   NAVBAR / SIDEBAR
-   =========================*/
-
-.navbar, .sidebar {
-    background: linear-gradient(to bottom, #1a2a6c, #b21f1f); /* Gradien gelap */
-    color: #FFFFFF; /* teks di atas gradien */
+/* divider */
+.dropdown-divider {
+  border-color: rgba(0,0,0,0.1);
 }
 
-.navbar a, .sidebar a {
-    color: #FFFFFF;
-    text-decoration: none;
+/* ================= SUB DROPDOWN (DROPEND) ================= */
+
+.dropdown-menu .dropdown-menu {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  margin-left: 0.3rem;
+  display: none;
+  min-width: 260px;
+  z-index: 1060;
+  opacity: 0;
+  transform: translateX(10px);
+  transition: all 0.25s ease;
 }
 
-.navbar a:hover, .sidebar a:hover {
-    color: #00BCD4; /* Aksen cerah */
+/* when shown */
+.dropdown-menu .dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* arrow indicator */
+.dropdown-toggle::after {
+  margin-left: 6px;
+}
+
+/* prevent clipping */
+.dropdown-menu {
+  overflow: visible;
+}
+
+/* ================= MOBILE ================= */
+
+@media (max-width: 991px) {
+  .dropdown-menu .dropdown-menu {
+    position: static;
+    transform: none;
+    margin-left: 0;
+    box-shadow: none;
+  }
+
+  .dropdown-menu .dropdown-menu.show {
+    opacity: 1;
+  }
+
+  .navbar-nav .nav-link {
+    margin-right: 0;
+  }
+}
+
+/* ================= TOGGLER ================= */
+
+.navbar-toggler {
+  border: none;
+  box-shadow: none;
+}
+
+.navbar-toggler-icon {
+  filter: drop-shadow(0 0 5px rgba(255,255,255,0.6));
+}
+
+/* ================= ACTIVE LINK ================= */
+
+.navbar-nav .nav-link.active {
+  background: linear-gradient(90deg, rgba(56,189,248,0.3), rgba(167,139,250,0.3));
+  color: #fff !important;
+}
+
+/* ================= SIDEBAR (IF ANY) ================= */
+
+.sidebar {
+  background: linear-gradient(to bottom, var(--nav-grad-1), var(--nav-grad-3));
+  color: white;
+}
+
+.sidebar a {
+  color: white;
+}
+
+.sidebar a:hover {
+  color: var(--nav-accent);
 }
