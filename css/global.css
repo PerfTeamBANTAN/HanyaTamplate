@@ -1,39 +1,62 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap');
+/* ==========================
+   GLOBAL STYLES
+   ========================== */
 
-:root {
-  /* DARK GLASS GRADIENT */
-  --grad-dark-1: #0b1020;
-  --grad-dark-2: #1a1440;
-
-  /* PREMIUM ACCENT */
-  --accent-cyan: #38bdf8;
-  --accent-violet: #8b5cf6;
-  --accent-pink: #f472b6;
-
-  /* BACKGROUND */
-  --bg-main: #f6f8fc;
-  --card-bg: #ffffff;
-
-  /* TEXT */
-  --text-main: #0f172a;
-  --text-muted: #64748b;
-}
-
-body {
-  margin: 0;
-  font-family: "Inter", sans-serif;
-  background: var(--bg-main);
-  color: var(--text-main);
-}
-
-h1,h2,h3,h4 {
-  font-weight: 600;
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #FFFFFF; /* Latar belakang utama */
+    color: #333333; /* Teks utama */
 }
 
 .text-muted {
-  color: var(--text-muted) !important;
+  color: var(--text-muted);
 }
 
-img {
-  max-width: 100%;
+
+/* Scrollbar custom */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #00BCD4; /* Aksen cerah */
+    border-radius: 4px;
+}
+
+:root {
+  --bg-main: #FFFFFF;
+  --text-main: #333333;
+  --text-muted: #adb5bd;
+  --grad-start: #1a2a6c;
+  --grad-end: #b21f1f;
+  --accent: #00BCD4;
+  --danger: #EF5350;
+  --success: #00BCD4;
+}
+
+/* ===== GLOBAL LOADING OVERLAY ===== */
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(26,42,108,.75); /* gradien gelap */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50;
+}
+
+.loading-overlay.d-none {
+  display: none;
+}
+
+.empty-state {
+  text-align: center;
+  color: #adb5bd;
+  padding: 16px;
 }
