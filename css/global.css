@@ -7,12 +7,22 @@
 /* 4 = Rainbow Neon */
 
 :root {
-  --neon-blue: #00e5ff;
-  --neon-purple: #8b5cf6;
-  --neon-pink: #ff4ecd;
-  --bg-light: #f8fafc;
+  /* DARK GLASS GRADIENT */
+  --grad-dark-1: #0b1020;   /* midnight navy */
+  --grad-dark-2: #1a1440;   /* deep purple */
+
+  /* PREMIUM ACCENT */
+  --accent-cyan: #38bdf8;
+  --accent-violet: #8b5cf6;
+  --accent-pink: #f472b6;
+
+  /* BACKGROUND */
+  --bg-main: #f6f8fc;       /* soft white */
   --card-bg: #ffffff;
-  --text-dark: #0f172a;
+
+  /* TEXT */
+  --text-main: #0f172a;
+  --text-muted: #64748b;
 }
 
 body {
