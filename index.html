@@ -129,7 +129,7 @@ const menuMap = {
   "ALERT-HSI": { html: "partials/alert-sqm-hsi.html", js: "js/alert-sqm-hsi.js", init: "initAlertHSI" },
   "dashboard-b2b": { html: "partials/dashboard-b2b.html", js: "js/dashboard-b2b.js", init: "initDashboardB2B" },
   "monitoring-b2b": { html: "partials/monitoring-b2b.html", js: "js/monitoring-b2b.js", init: "initMonitoringB2B" },
-  "dashbord-b2c": { html: "partials/dashboard-b2c-24kpi.html", js: "js/dashboard-b2c-24kpi.js", init: "initDashboardB2C24KPI" },
+  "dashboard-b2c": { html: "partials/dashboard-b2c-24kpi.html", js: "js/dashboard-b2c-24kpi.js", init: "initDashboardB2C24KPI" },
   "monitoring-b2c": { html: "partials/monitoring-b2c.html", js: "js/monitoring-b2c.js", init: "initMonitoringB2C" }
 };
 
@@ -167,28 +167,31 @@ function showUnderConstruction() {
   `;
 }
 
+// MENU LINK (content loader)
 document.querySelectorAll(".menu-link").forEach(el => {
   el.addEventListener("click", e => {
     e.preventDefault();
     loadPage(el.dataset.menu);
   });
 });
-  
-document.querySelectorAll('.dropdown-submenu > a').forEach(el => {
-  el.addEventListener('click', function (e) {
+
+// SUBMENU TOGGLE (parent only)
+document.querySelectorAll(".dropdown-submenu > a.dropdown-toggle").forEach(el => {
+  el.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
-    let parent = this.parentElement;
+    const parent = this.parentElement;
 
-    parent.classList.toggle('show');
+    parent.classList.toggle("show");
 
     // tutup submenu lain
-    document.querySelectorAll('.dropdown-submenu').forEach(item => {
-      if (item !== parent) item.classList.remove('show');
+    document.querySelectorAll(".dropdown-submenu").forEach(item => {
+      if (item !== parent) item.classList.remove("show");
     });
   });
 });
+
 </script>
 
 </body>
