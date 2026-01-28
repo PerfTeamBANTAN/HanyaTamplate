@@ -153,7 +153,7 @@
 </div>
 </nav>
 
-<div class="home-fullscreen" id="home-fullscreen">
+<div class="home-fullscreen home-bg" id="home-fullscreen">
   <div id="content-area"></div>
 </div>
 
@@ -177,6 +177,9 @@ const menuMap = {
 
 async function loadPage(menu) {
   const content = document.getElementById("content-area");
+  const home = document.getElementById("home-fullscreen");
+
+  home.classList.remove("home-bg");
 
   content.innerHTML = `
     <div class="d-flex flex-column align-items-center justify-content-center">
@@ -191,7 +194,6 @@ async function loadPage(menu) {
   }
 
   const cfg = menuMap[menu];
-
   const res = await fetch(cfg.html);
   content.innerHTML = await res.text();
 
@@ -202,14 +204,24 @@ async function loadPage(menu) {
 }
 
 function showUnderConstruction() {
+  const home = document.getElementById("home-fullscreen");
+  home.classList.remove("home-bg");
+
   document.getElementById("content-area").innerHTML = `
     <div class="text-center">
-      <img src="assets/home/under contruction.png" class="img-fluid">
+      <img src="assets/home/under-construction.png" class="img-fluid">
     </div>
   `;
 }
 
-// MENU LINK (content loader)
+function goHome() {
+  const home = document.getElementById("home-fullscreen");
+  const content = document.getElementById("content-area");
+
+  content.innerHTML = "";
+  home.classList.add("home-bg");
+}
+
 document.querySelectorAll(".menu-link").forEach(el => {
   el.addEventListener("click", e => {
     e.preventDefault();
@@ -217,22 +229,20 @@ document.querySelectorAll(".menu-link").forEach(el => {
   });
 });
 
-// SUBMENU TOGGLE (parent only)
 document.querySelectorAll(".dropdown-submenu > a.dropdown-toggle").forEach(el => {
   el.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
 
     const parent = this.parentElement;
-
     parent.classList.toggle("show");
 
-    // tutup submenu lain
     document.querySelectorAll(".dropdown-submenu").forEach(item => {
       if (item !== parent) item.classList.remove("show");
     });
   });
 });
+
 
 </script>
 
