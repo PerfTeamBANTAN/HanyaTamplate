@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+:root {
+  --neon-blue: #00e5ff;
+  --neon-purple: #8b5cf6;
+  --neon-pink: #ff4ecd;
+  --bg-light: #f8fafc;
+  --card-bg: #ffffff;
+  --text-dark: #0f172a;
+}
+
 body {
   margin: 0;
-  font-family: "Segoe UI", Arial, sans-serif;
-  background: #0d1117;
-  color: #fff;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-light);
+  color: var(--text-dark);
 }
 
 img {
   max-width: 100%;
 }
-
-.text-secondary {
-  color: #9ca3af !important;
-}
-
