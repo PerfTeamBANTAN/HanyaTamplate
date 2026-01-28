@@ -1,1 +1,38 @@
+.navbar {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  box-shadow: 0 0 15px rgba(0,229,255,0.6);
+}
+
+.navbar-brand {
+  font-weight: 600;
+  color: #fff !important;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  margin-right: 12px;
+  transition: 0.3s;
+}
+
+.navbar-nav .nav-link:hover {
+  color: var(--neon-pink) !important;
+}
+
+/* dropdown */
+.dropdown-menu {
+  background: #ffffff;
+  border-radius: 12px;
+  border: 1px solid var(--neon-blue);
+  box-shadow: 0 0 20px rgba(0,229,255,0.4);
+}
+
+.dropdown-item {
+  color: var(--text-dark);
+  border-radius: 8px;
+}
+
+.dropdown-item:hover {
+  background: var(--neon-blue);
+  color: #000;
+}
 
