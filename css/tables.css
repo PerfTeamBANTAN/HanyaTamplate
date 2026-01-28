@@ -1,1 +1,22 @@
+.table {
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 12px rgba(0,229,255,0.25);
+}
+
+.table th {
+  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
+  color: #000;
+  font-weight: 600;
+}
+
+.table td {
+  background: #f9fafb;
+  color: var(--text-dark);
+}
+
+.table tr:hover td {
+  background: #e0f7ff;
+}
 
