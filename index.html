@@ -9,7 +9,7 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<!-- GLOBAL THEME -->
+<!-- GLOBAL CSS -->
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/home.css">
@@ -19,31 +19,31 @@
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/overrides.css">
 
-<!-- MODULE CSS -->
-<link rel="stylesheet" href="modules/alert-sqm-hsi.css">
-<link rel="stylesheet" href="modules/asgar-hsi.css">
-<link rel="stylesheet" href="modules/monitoring-b2b.css">
-<link rel="stylesheet" href="modules/monitoring-b2c.css">
-<link rel="stylesheet" href="modules/ttr-hsi.css">
+<!-- MODULE CSS (FIX PATH) -->
+<link rel="stylesheet" href="css/modules/alert-sqm-hsi.css">
+<link rel="stylesheet" href="css/modules/asgar-hsi.css">
+<link rel="stylesheet" href="css/modules/monitoring-b2b.css">
+<link rel="stylesheet" href="css/modules/monitoring-b2c.css">
+<link rel="stylesheet" href="css/modules/ttr-hsi.css">
+
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-  <div class="container-fluid">
+<div class="container-fluid">
 
-    <a class="navbar-brand" href="#" onclick="location.reload()">
-      <img src="assets/PERFORMANCE TEAM.png" height="40" class="me-2">
-      PERFORMANCE BAN-TAN
-    </a>
+<a class="navbar-brand" href="#" onclick="location.reload()">
+  <img src="assets/PERFORMANCE TEAM.png" height="40" class="me-2">
+  PERFORMANCE BAN-TAN
+</a>
 
-    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+<span class="navbar-toggler-icon"></span>
+</button>
 
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+<div class="collapse navbar-collapse" id="navbarNav">
+<ul class="navbar-nav">
 
         <!-- ================= B2C ================= -->
         <li class="nav-item dropdown">
@@ -107,21 +107,20 @@
         </li>
 
       </ul>
-    </div>
-  </div>
+</div>
+</div>
 </nav>
 
-<!-- ================= CONTENT ================= -->
 <div class="home-fullscreen" id="home-fullscreen">
-  <div id="content-area" class="fade-in"></div>
+  <div id="content-area"></div>
 </div>
 
-<!-- LIBRARIES -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const API_URL = "https://script.google.com/macros/s/AKfycby8iFZkMY53F4pYQFuH00b6Av7NAwp5Rtrk3b1GfNd6hwJelmlSjcUGeZjXlnz_Zmr2/exec";
+const B2B_API_URL =
+'https://script.google.com/macros/s/AKfycby8iFZkMY53F4pYQFuH00b6Av7NAwp5Rtrk3b1GfNd6hwJelmlSjcUGeZjXlnz_Zmr2/exec';
 
 const menuMap = {
   "District-Banten": { html: "partials/district-banten.html", js: "js/district-banten.js", init: "initDistrictBanten" },
@@ -130,22 +129,11 @@ const menuMap = {
   "ALERT-HSI": { html: "partials/alert-sqm-hsi.html", js: "js/alert-sqm-hsi.js", init: "initAlertHSI" },
   "dashboard-b2b": { html: "partials/dashboard-b2b.html", js: "js/dashboard-b2b.js", init: "initDashboardB2B" },
   "monitoring-b2b": { html: "partials/monitoring-b2b.html", js: "js/monitoring-b2b.js", init: "initMonitoringB2B" },
-  "dashboard-b2c": { html: "partials/dashboard-b2c-24kpi.html", js: "js/dashboard-b2c-24kpi.js", init: "initDashboardB2C24KPI" },
+  "dashbord-b2c": { html: "partials/dashboard-b2c-24kpi.html", js: "js/dashboard-b2c-24kpi.js", init: "initDashboardB2C24KPI" },
   "monitoring-b2c": { html: "partials/monitoring-b2c.html", js: "js/monitoring-b2c.js", init: "initMonitoringB2C" }
 };
 
-function showUnderConstruction() {
-  const content = document.getElementById("content-area");
-  content.innerHTML = `
-    <div class="d-flex flex-column align-items-center justify-content-center">
-      <div class="spinner-border mb-3"></div>
-      <img src="assets/under contruction.png" class="img-fluid">
-    </div>
-  `;
-}
-
 async function loadPage(menu) {
-  const config = menuMap[menu];
   const content = document.getElementById("content-area");
 
   content.innerHTML = `
@@ -155,18 +143,28 @@ async function loadPage(menu) {
     </div>
   `;
 
-  if (!config) {
+  if (!menuMap[menu]) {
     showUnderConstruction();
     return;
   }
 
-  const res = await fetch(config.html);
+  const cfg = menuMap[menu];
+
+  const res = await fetch(cfg.html);
   content.innerHTML = await res.text();
 
   const s = document.createElement("script");
-  s.src = config.js + "?v=" + Date.now();
-  s.onload = () => window[config.init](API_URL);
+  s.src = cfg.js + "?v=" + Date.now();
+  s.onload = () => window[cfg.init](B2B_API_URL);
   document.body.appendChild(s);
+}
+
+function showUnderConstruction() {
+  document.getElementById("content-area").innerHTML = `
+    <div class="text-center">
+      <img src="assets/under contruction.png" class="img-fluid">
+    </div>
+  `;
 }
 
 document.querySelectorAll(".menu-link").forEach(el => {
@@ -187,3 +185,4 @@ document.querySelectorAll(".dropdown-menu .dropdown-toggle").forEach(el => {
 
 </body>
 </html>
+
