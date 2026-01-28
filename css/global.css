@@ -40,6 +40,7 @@ body, html {
   --success: #00BCD4;
 }
 
+
 /* ===== GLOBAL LOADING OVERLAY ===== */
 .loading-overlay {
   position: absolute;
