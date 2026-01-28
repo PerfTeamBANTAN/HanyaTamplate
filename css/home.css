@@ -1,24 +1,20 @@
 .home-fullscreen {
   min-height: calc(100vh - 56px);
-  background: linear-gradient(135deg, #ffffff, #e0f7ff);
+  background: radial-gradient(circle at top, #ffffff, #eef2ff);
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
-}
-
-.home-fullscreen.no-bg {
-  background: #f8fafc;
+  padding: 24px;
 }
 
 #content-area {
   width: 100%;
-  max-width: 1400px;
-  min-height: 80vh;
+  max-width: 1440px;
+  min-height: 82vh;
   background: var(--card-bg);
-  border-radius: 20px;
-  padding: 20px;
-  box-shadow: 
-    0 0 20px rgba(0,229,255,0.3),
-    0 0 40px rgba(139,92,246,0.2);
+  border-radius: 24px;
+  padding: 24px;
+  box-shadow:
+    0 10px 30px rgba(15,23,42,0.08),
+    0 0 0 1px rgba(148,163,184,0.1);
 }
