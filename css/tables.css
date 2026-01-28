@@ -1,22 +1,21 @@
 .table {
-  background: #ffffff;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
-  box-shadow: 0 0 12px rgba(0,229,255,0.25);
+  box-shadow:
+    0 4px 15px rgba(15,23,42,0.05);
 }
 
 .table th {
-  background: linear-gradient(90deg, var(--neon-blue), var(--neon-purple));
-  color: #000;
+  background: linear-gradient(90deg, var(--grad-dark-1), var(--grad-dark-2));
+  color: #fff;
   font-weight: 600;
 }
 
 .table td {
-  background: #f9fafb;
-  color: var(--text-dark);
+  background: #ffffff;
+  color: var(--text-main);
 }
 
 .table tr:hover td {
-  background: #e0f7ff;
+  background: #f1f5ff;
 }
-
