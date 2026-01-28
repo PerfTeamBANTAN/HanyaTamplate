@@ -5,9 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>PERFORMANCE BAN-TAN - Dashboard Integrated</title>
 
+<!-- LIBRARIES -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
+<!-- GLOBAL THEME -->
 <link rel="stylesheet" href="css/global.css">
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/home.css">
@@ -17,295 +19,168 @@
 <link rel="stylesheet" href="css/animations.css">
 <link rel="stylesheet" href="css/overrides.css">
 
+<!-- MODULE CSS -->
+<link rel="stylesheet" href="modules/alert-sqm-hsi.css">
+<link rel="stylesheet" href="modules/asgar-hsi.css">
+<link rel="stylesheet" href="modules/monitoring-b2b.css">
+<link rel="stylesheet" href="modules/monitoring-b2c.css">
+<link rel="stylesheet" href="modules/ttr-hsi.css">
 </head>
 
 <body>
 
+<!-- ================= NAVBAR ================= -->
 <nav class="navbar navbar-expand-lg navbar-dark">
-<div class="container-fluid">
-<a class="navbar-brand" href="javascript:void(0)" onclick="location.reload()">
-<img src="PERFORMANCE TEAM.png" style="height:40px;margin-right:10px;">
-PERFORMANCE BAN-TAN
-</a>
+  <div class="container-fluid">
 
-<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-<span class="navbar-toggler-icon"></span>
-</button>
+    <a class="navbar-brand" href="#" onclick="location.reload()">
+      <img src="assets/PERFORMANCE TEAM.png" height="40" class="me-2">
+      PERFORMANCE BAN-TAN
+    </a>
 
-<div class="collapse navbar-collapse" id="navbarNav">
-<ul class="navbar-nav">
+    <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-<!-- =========================
-     Huddle Performance B2C
-========================= -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-    Huddle Performance Khusus B2C
-  </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
 
-  <ul class="dropdown-menu">
-    <li>
-      <a class="dropdown-item menu-link" data-menu="dashbord-b2c">
-        Dashboard B2C 24KPI District BANTEN
-      </a>
-    </li>
+        <!-- ================= B2C ================= -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Huddle Performance Khusus B2C
+          </a>
 
-    <li>
-      <a class="dropdown-item menu-link" data-menu="monitoring-b2c">
-        Monitoring Tiket B2C HI
-      </a>
-    </li>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item menu-link" data-menu="dashboard-b2c">Dashboard B2C 24KPI District BANTEN</a></li>
+            <li><a class="dropdown-item menu-link" data-menu="monitoring-b2c">Monitoring Tiket B2C HI</a></li>
 
-    <li><hr class="dropdown-divider"></li>
+            <li><hr class="dropdown-divider"></li>
 
-    <!-- Sub Dropdown -->
-    <li class="dropdown dropend">
-      <a class="dropdown-item dropdown-toggle" href="#" role="button" type="button"
-         data-bs-toggle="dropdown" data-bs-auto-close="outside">
-        Dashboard B2C District BANTEN
-      </a>
+            <li class="dropdown dropend">
+              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                Dashboard B2C District BANTEN
+              </a>
 
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Q B2C All</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Assurance Guarantee B2C All</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance TTR B2C</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Underspec B2C</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance SCC B2C</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance VALINS B2C</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Tiket Infracare & Dismantling</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance TANGIBLE ODP & ODC</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Alert B2C dan SQM B2C</a></li>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Q B2C All</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Assurance Guarantee B2C</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance TTR B2C</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Underspec B2C</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance SCC B2C</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance VALINS B2C</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Infracare & Dismantling</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Tangible ODP & ODC</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Alert & SQM B2C</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <!-- ================= B2B ================= -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
+            Huddle Performance Khusus B2B
+          </a>
+
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item menu-link" data-menu="dashboard-b2b">Dashboard B2B 48KPI District BANTEN</a></li>
+            <li><a class="dropdown-item menu-link" data-menu="monitoring-b2b">Monitoring Tiket B2B HI</a></li>
+
+            <li><hr class="dropdown-divider"></li>
+
+            <li class="dropdown dropend">
+              <a class="dropdown-item dropdown-toggle" href="#" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                Dashboard B2B District BANTEN
+              </a>
+
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item menu-link" data-menu="District-Banten">Performance Q HSI</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="Asgar-HSI">Performance Assurance Guarantee HSI</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="TTR-HSI">Performance TTR HSI & Datin</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Unspec Segmen Akses & Wifi</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="xxx">Performance %Closed SQM HSI & DATIN</a></li>
+                <li><a class="dropdown-item menu-link" data-menu="ALERT-HSI">Performance Alert HSI & SQM HSI</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
       </ul>
-    </li>
-  </ul>
-</li>
-
-<!-- =========================
-     Huddle Performance B2B
-========================= -->
-<li class="nav-item dropdown">
-  <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">
-    Huddle Performance Khusus B2B
-  </a>
-
-  <ul class="dropdown-menu">
-    <li>
-      <a class="dropdown-item menu-link" data-menu="dashboard-b2b">
-        Dashboard B2B 48KPI District BANTEN
-      </a>
-    </li>
-
-    <li>
-      <a class="dropdown-item menu-link" data-menu="monitoring-b2b">
-        Monitoring Tiket B2B HI
-      </a>
-    </li>
-
-    <li><hr class="dropdown-divider"></li>
-
-    <!-- Sub Dropdown -->
-    <li class="dropdown dropend">
-      <a class="dropdown-item dropdown-toggle" href="#" role="button"
-         data-bs-toggle="dropdown" data-bs-auto-close="outside">
-        Dashboard B2B District BANTEN
-      </a>
-
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item menu-link" data-menu="District-Banten">Performance Q HSI</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="Asgar-HSI">Performance Assurance Guarantee HSI</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="TTR-HSI">Performance TTR HSI dan Datin</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance Unspec Segmen Akses & Wifi</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="xxx">Performance %Closed SQM HSI & DATIN</a></li>
-        <li><a class="dropdown-item menu-link" data-menu="ALERT-HSI">Performance Alert HSI dan SQM HSI</a></li>
-      </ul>
-    </li>
-  </ul>
-</li>
-
-
-
-
-</ul>
-</div>
-</div>
+    </div>
+  </div>
 </nav>
 
+<!-- ================= CONTENT ================= -->
 <div class="home-fullscreen" id="home-fullscreen">
-<div id="content-area"></div>
+  <div id="content-area" class="fade-in"></div>
 </div>
 
+<!-- LIBRARIES -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <script>
-const B2B_API_URL =
-'https://script.google.com/macros/s/AKfycby8iFZkMY53F4pYQFuH00b6Av7NAwp5Rtrk3b1GfNd6hwJelmlSjcUGeZjXlnz_Zmr2/exec';
+const API_URL = "https://script.google.com/macros/s/AKfycby8iFZkMY53F4pYQFuH00b6Av7NAwp5Rtrk3b1GfNd6hwJelmlSjcUGeZjXlnz_Zmr2/exec";
+
+const menuMap = {
+  "District-Banten": { html: "partials/district-banten.html", js: "js/district-banten.js", init: "initDistrictBanten" },
+  "Asgar-HSI": { html: "partials/asgar-hsi.html", js: "js/asgar-hsi.js", init: "initAsgarHSI" },
+  "TTR-HSI": { html: "partials/ttr-hsi.html", js: "js/ttr-hsi.js", init: "initTTRHSI" },
+  "ALERT-HSI": { html: "partials/alert-sqm-hsi.html", js: "js/alert-sqm-hsi.js", init: "initAlertHSI" },
+  "dashboard-b2b": { html: "partials/dashboard-b2b.html", js: "js/dashboard-b2b.js", init: "initDashboardB2B" },
+  "monitoring-b2b": { html: "partials/monitoring-b2b.html", js: "js/monitoring-b2b.js", init: "initMonitoringB2B" },
+  "dashboard-b2c": { html: "partials/dashboard-b2c-24kpi.html", js: "js/dashboard-b2c-24kpi.js", init: "initDashboardB2C24KPI" },
+  "monitoring-b2c": { html: "partials/monitoring-b2c.html", js: "js/monitoring-b2c.js", init: "initMonitoringB2C" }
+};
 
 function showUnderConstruction() {
-const home = document.getElementById('home-fullscreen');
-const content = document.getElementById('content-area');
-
-content.classList.remove('show-grid');
-content.style.display = 'flex';
-home.classList.add('no-bg');
-
-content.innerHTML = `
-<div class="d-flex flex-column align-items-center justify-content-center">
-<div class="spinner-border text-light mb-3"></div>
-<div>Loading dashboard...</div>
-</div>
-`;
-
-setTimeout(() => {
-content.innerHTML = '';
-const img = document.createElement('img');
-img.src = 'under contruction.png';
-content.appendChild(img);
-}, 800);
+  const content = document.getElementById("content-area");
+  content.innerHTML = `
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <div class="spinner-border mb-3"></div>
+      <img src="assets/under contruction.png" class="img-fluid">
+    </div>
+  `;
 }
 
-async function loadPartialIntoContent(url, onLoaded) {
-const home = document.getElementById('home-fullscreen');
-const content = document.getElementById('content-area');
+async function loadPage(menu) {
+  const config = menuMap[menu];
+  const content = document.getElementById("content-area");
 
-home.classList.add('no-bg');
-content.innerHTML = `
-<div class="d-flex flex-column align-items-center justify-content-center">
-<div class="spinner-border text-light mb-3"></div>
-<div>Loading...</div>
-</div>
-`;
+  content.innerHTML = `
+    <div class="d-flex flex-column align-items-center justify-content-center">
+      <div class="spinner-border mb-3"></div>
+      <div>Loading...</div>
+    </div>
+  `;
 
-const res = await fetch(url);
-content.innerHTML = await res.text();
-if (onLoaded) onLoaded();
+  if (!config) {
+    showUnderConstruction();
+    return;
+  }
+
+  const res = await fetch(config.html);
+  content.innerHTML = await res.text();
+
+  const s = document.createElement("script");
+  s.src = config.js + "?v=" + Date.now();
+  s.onload = () => window[config.init](API_URL);
+  document.body.appendChild(s);
 }
 
-document.querySelectorAll('.menu-link').forEach(el => {
-el.addEventListener('click', e => {
-e.preventDefault();
-const menu = el.dataset.menu;
-
-if (menu === 'District-Banten') {
-
-  loadPartialIntoContent('partials/district-banten.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/district-banten.js?v=' + Date.now();
-    s.onload = () => initDistrictBanten(B2B_API_URL);
-    document.body.appendChild(s);
+document.querySelectorAll(".menu-link").forEach(el => {
+  el.addEventListener("click", e => {
+    e.preventDefault();
+    loadPage(el.dataset.menu);
   });
-
-} else if (menu === 'Asgar-HSI') {
-
-  loadPartialIntoContent('partials/asgar-hsi.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/asgar-hsi.js?v=' + Date.now();
-    s.onload = () => initAsgarHSI(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'TTR-HSI') {
-
-  loadPartialIntoContent('partials/ttr-hsi.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/ttr-hsi.js?v=' + Date.now();
-    s.onload = () => initTTRHSI(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'ALERT-HSI') {
-
-  loadPartialIntoContent('partials/alert-sqm-hsi.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/alert-sqm-hsi.js?v=' + Date.now();
-    s.onload = () => initAlertHSI(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'dashboard-b2b') {
-
-  loadPartialIntoContent('partials/dashboard-b2b.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/dashboard-b2b.js?v=' + Date.now();
-    s.onload = () => initDashboardB2B(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'monitoring-b2b') {
-
-  loadPartialIntoContent('partials/monitoring-b2b.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/monitoring-b2b.js?v=' + Date.now();
-    s.onload = () => initMonitoringB2B(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'dashbord-b2c') {
-
-  loadPartialIntoContent('partials/dashboard-b2c-24kpi.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/dashboard-b2c-24kpi.js?v=' + Date.now();
-    s.onload = () => initDashboardB2C24KPI(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-} else if (menu === 'monitoring-b2c') {
-
-  loadPartialIntoContent('partials/monitoring-b2c.html', () => {
-    const content = document.getElementById('content-area');
-    content.classList.add('show-grid');
-    content.style.display = 'block';
-
-    const s = document.createElement('script');
-    s.src = 'js/monitoring-b2c.js?v=' + Date.now();
-    s.onload = () => initMonitoringB2C(B2B_API_URL);
-    document.body.appendChild(s);
-  });
-
-
-} else {
-  showUnderConstruction();
-}
-});
 });
 
-document.querySelectorAll('.dropdown-menu .dropdown-toggle').forEach(el => {
-  el.addEventListener('click', function (e) {
+document.querySelectorAll(".dropdown-menu .dropdown-toggle").forEach(el => {
+  el.addEventListener("click", function (e) {
     e.preventDefault();
     e.stopPropagation();
-
-    const submenu = this.nextElementSibling;
-    if (!submenu) return;
-
-    submenu.classList.toggle('show');
+    this.nextElementSibling.classList.toggle("show");
   });
 });
 </script>
