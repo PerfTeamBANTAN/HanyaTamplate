@@ -1,9 +1,92 @@
-.summary-box {
-  background: linear-gradient(135deg, var(--grad-dark-1), var(--grad-dark-2));
-  border-radius: 20px;
-  padding: 22px;
-  color: #fff;
-  box-shadow:
-    0 8px 25px rgba(0,0,0,0.3),
-    0 0 0 1px rgba(255,255,255,0.1);
+/* ==========================
+   SUMMARY CARDS
+   ========================== */
+
+.summary-card {
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    padding: 1rem;
+    color: #333333;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
 }
+
+.summary-card .value {
+    color: #00BCD4; /* aksen cerah */
+}
+
+.summary-card .progress-bar {
+    background: linear-gradient(to right, #1a2a6c, #b21f1f); /* gradien gelap */
+}
+
+.filter-label {
+  font-size: 12px;
+  font-weight: 600;
+  margin-right: 6px;
+  white-space: nowrap;
+  color: #333333;
+}
+
+#achievement-chart,
+#status-chart {
+  background: #FFFFFF;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.summary-card-v3 {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.summary-card-v3.blue {
+  border-left: 6px solid #00BCD4;
+}
+
+.summary-card-v3.green {
+  border-left: 6px solid #4CAF50;
+}
+
+.summary-left h5 {
+  color: #333333;
+  font-weight: 700;
+}
+
+.summary-quote {
+  font-size: 14px;
+  margin-top: 6px;
+}
+
+.glow-text {
+  text-shadow: 0 0 6px rgba(0,188,212,.5);
+}
+
+.summary-progress {
+  height: 8px;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.summary-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg,#1a2a6c,#b21f1f);
+}
+
+.summary-percent {
+  font-weight: 700;
+  margin-top: 6px;
+}
+
+.summary-footer span {
+  margin-right: 10px;
+}
+
+.summary-avatar {
+  width: 90px;
+}
+
