@@ -1,8 +1,9 @@
 .summary-box {
-  background: linear-gradient(135deg, var(--neon-blue), var(--neon-purple));
-  border-radius: 18px;
-  padding: 20px;
-  color: #000;
-  box-shadow: 0 0 20px rgba(0,229,255,0.6);
+  background: linear-gradient(135deg, var(--grad-dark-1), var(--grad-dark-2));
+  border-radius: 20px;
+  padding: 22px;
+  color: #fff;
+  box-shadow:
+    0 8px 25px rgba(0,0,0,0.3),
+    0 0 0 1px rgba(255,255,255,0.1);
 }
-
