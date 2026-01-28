@@ -1,0 +1,15 @@
+{
+  "name": "PERFORMANCE BAN-TAN Dashboard",
+  "short_name": "BAN-TAN KPI",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#0f2027",
+  "theme_color": "#0f2027",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
