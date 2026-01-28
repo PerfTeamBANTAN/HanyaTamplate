@@ -3,16 +3,16 @@
    =========================== */
 
 .home {
-    min-height: 100vh;
-    background-color: #FFFFFF; /* Putih bersih */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .home h1 {
-    color: #333333; /* Teks utama */
+  color: #333333;
 }
 
 #district-banten-row {
@@ -21,9 +21,16 @@
   gap: 12px;
 }
 
+/* container tanpa background */
 .home-fullscreen {
   width: 100%;
   min-height: 100vh;
   margin-top: 56px;
+  background: none;
+  transition: background 0.5s ease;
+}
+
+/* background hanya untuk HOME */
+.home-fullscreen.home-bg {
   background: url('../assets/home/huddle_performance.png') center / cover no-repeat;
 }
