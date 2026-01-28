@@ -20,3 +20,10 @@
   grid-template-columns: repeat(auto-fill, minmax(220px,1fr));
   gap: 12px;
 }
+
+.home-fullscreen {
+  width: 100%;
+  min-height: 100vh;
+  margin-top: 56px;
+  background: url('../assets/home/huddle_performance.png') center / cover no-repeat;
+}
