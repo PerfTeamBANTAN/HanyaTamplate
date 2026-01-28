@@ -1,27 +1,14 @@
 .fade-in {
-  animation: fadeIn 0.5s ease-in-out;
-}
-
-.glow {
-  animation: glowPulse 2s infinite alternate;
+  animation: fadeIn .5s ease-in-out;
 }
 
 @keyframes fadeIn {
   from {
     opacity: 0;
-    transform: translateY(10px);
+    transform: translateY(8px);
   }
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes glowPulse {
-  from {
-    box-shadow: 0 0 10px var(--neon-blue);
-  }
-  to {
-    box-shadow: 0 0 25px var(--neon-pink);
   }
 }
