@@ -1,1 +1,25 @@
+.home-fullscreen {
+  min-height: calc(100vh - 56px);
+  background: linear-gradient(135deg, #ffffff, #e0f7ff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.home-fullscreen.no-bg {
+  background: #f8fafc;
+}
+
+#content-area {
+  width: 100%;
+  max-width: 1400px;
+  min-height: 80vh;
+  background: var(--card-bg);
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 
+    0 0 20px rgba(0,229,255,0.3),
+    0 0 40px rgba(139,92,246,0.2);
+}
 
