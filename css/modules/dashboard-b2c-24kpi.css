@@ -1,6 +1,6 @@
 /* =========================================================
    DASHBOARD B2C 24 KPI - ULTIMATE PREMIUM UI
-   Versi 1 - Background Putih, Flex KPI Horizontal
+   Versi 1 - Background Putih, Flex KPI Horizontal (No Scroll)
 ========================================================= */
 
 /* ======================
@@ -127,7 +127,7 @@
 }
 
 /* ======================
-   KPI GRID (Versi 1, Horizontal Flex)
+   KPI GRID (No Scroll, Flex Wrap)
 ====================== */
 .b2c-kpi-wrapper {
   display: flex;
@@ -140,7 +140,7 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 16px;
-  position: relative;
+  flex-wrap: wrap; /* otomatis turun baris baru jika ruang habis */
 }
 
 .kpi-category-title {
@@ -157,34 +157,20 @@
 
 .kpi-category-cards {
   display: flex;
-  flex-direction: row;
+  flex-wrap: wrap;  /* kartu akan menyesuaikan lebar */
   gap: 14px;
-  flex-wrap: nowrap;        /* kartu tetap sejajar */
-  overflow-x: auto;         /* scroll horizontal */
-  padding-bottom: 4px;
 }
 
-.kpi-category-cards::-webkit-scrollbar {
-  height: 6px;
-}
-
-.kpi-category-cards::-webkit-scrollbar-thumb {
-  background: rgba(148,163,184,.5);
-  border-radius: 3px;
-}
-
-.kpi-category-cards::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.05);
-  border-radius: 3px;
-}
-
+/* ======================
+   KPI CARD
+====================== */
 .kpi-card {
   background: var(--b2c-card);
   border: 1px solid rgba(148,163,184,.15);
   border-radius: 14px;
   padding: 12px 14px;
   min-height: 120px;
-  flex: 0 0 230px;
+  flex: 1 1 230px; /* bisa mengecil dan membesar */
 
   display: flex;
   flex-direction: column;
@@ -303,5 +289,3 @@
 .kpi-td.kpi-not-ach:hover {
   background-color: rgba(220,38,38,0.2) !important;
 }
-
-
