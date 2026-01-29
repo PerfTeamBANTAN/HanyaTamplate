@@ -492,7 +492,7 @@ async function openTTRDetail(endpoint, sto, header) {
 
   body.innerHTML = `
     <div class="table-responsive">
-      <table class="table table-sm table-bordered table-dark align-middle">
+      <table class="table table-sm table-bordered table-hover align-middle">
         <thead>
           <tr>${json.headers.map(h => `<th>${h}</th>`).join('')}</tr>
         </thead>
