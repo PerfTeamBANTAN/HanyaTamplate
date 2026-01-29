@@ -160,26 +160,47 @@ table thead tr:nth-child(4) th {
 
 
 /* ===========================
-   GLOBAL MODAL OVERRIDE
+   GLOBAL MODAL (LIGHT THEME)
 =========================== */
+
 #global-modal .modal-content {
-  background-color: #1a2a6c;
-  color: #ffffff;
+  background: #ffffff;
+  color: #333333;
+  border-radius: 14px;
+  border: none;
+  box-shadow: 0 10px 40px rgba(0,0,0,.2);
 }
 
 #global-modal .modal-header {
-  border-bottom: 1px solid rgba(255,255,255,.2);
+  background: #f8f9fa;
+  border-bottom: 1px solid #e9ecef;
 }
 
-/* modal table -> LIGHT */
+#global-modal .modal-title {
+  font-weight: 700;
+  color: #333;
+}
+
+#global-modal .btn-close {
+  filter: none;
+}
+
+/* modal body */
+#global-modal .modal-body {
+  background: #ffffff;
+  color: #333333;
+}
+
+/* modal table tetap light */
 #global-modal table {
   background-color: #ffffff !important;
   color: #333333 !important;
 }
 
 #global-modal table th {
-  background: #f8f9fa !important;
+  background: #f1f3f5 !important;
   color: #333333 !important;
+  font-weight: 600;
 }
 
 #global-modal table td {
