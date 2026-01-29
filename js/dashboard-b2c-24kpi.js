@@ -159,30 +159,65 @@ window.B2C24KPI = (function () {
 
   // ================= KPI GRID DETAIL TABLE =================
   function renderKpiGridDetailTable(headers, data, wrapperId, loadingId, contentId) {
-    const wrapper = document.getElementById(wrapperId), loading = document.getElementById(loadingId), content = document.getElementById(contentId), thead = wrapper?.querySelector('thead'), tbody = wrapper?.querySelector('tbody');
-    if (!wrapper || !thead || !tbody) return;
-    thead.innerHTML = ''; tbody.innerHTML = '';
-    const kpiStartIndex = headers.indexOf('Target') + 1;
-    const trHead = document.createElement('tr');
-    headers.forEach((h, i) => { const th = document.createElement('th'); th.textContent = h; th.className = `text-center fw-semibold kpi-th ${i >= kpiStartIndex ? 'kpi-col' : ''}`; trHead.appendChild(th); }); 
-    thead.appendChild(trHead);
+  const wrapper = document.getElementById(wrapperId);
+  const loading = document.getElementById(loadingId);
+  const content = document.getElementById(contentId);
+  const thead = wrapper?.querySelector('thead');
+  const tbody = wrapper?.querySelector('tbody');
+  if (!wrapper || !thead || !tbody) return;
 
-    data.forEach(row => {
-      const tr = document.createElement('tr');
-      headers.forEach((h, i) => {
-        const td = document.createElement('td'); const val = row[h];
-        td.textContent = val ?? '-'; td.classList.add('kpi-td');
-        if (i >= kpiStartIndex) {
-          const num = Number(val), target = Number(row.Target);
-          if (!isNaN(num)) { td.classList.add('text-end'); if (isNotAch(num, target, row.Indikator)) td.classList.add('kpi-not-ach'); }
+  thead.innerHTML = '';
+  tbody.innerHTML = '';
+
+  const kpiStartIndex = headers.indexOf('Target') + 1;
+
+  const trHead = document.createElement('tr');
+  headers.forEach((h, i) => {
+    const th = document.createElement('th');
+    th.textContent = h;
+    th.className = `text-center fw-semibold kpi-th ${i >= kpiStartIndex ? 'kpi-col' : ''}`;
+    trHead.appendChild(th);
+  });
+  thead.appendChild(trHead);
+
+  const parseVal = v => {
+    if (v == null) return NaN;
+    return Number(String(v).replace(/\./g,'').replace(',', '.'));
+  };
+
+  data.forEach(row => {
+    const tr = document.createElement('tr');
+
+    headers.forEach((h, i) => {
+      const td = document.createElement('td');
+      const val = row[h];
+      td.textContent = val ?? '-';
+      td.classList.add('kpi-td');
+
+      if (i >= kpiStartIndex) {
+        const num = parseVal(val);
+        const target = parseVal(row.Target);
+        if (!isNaN(num) && !isNaN(target)) {
+          td.classList.add('text-end');
+          if (isNotAch(num, target, row.Indikator)) {
+            td.classList.add('kpi-not-ach'); // merah
+          } else {
+            td.classList.add('text-success'); // hijau
+          }
         }
-        tr.appendChild(td);
-      });
-      tbody.appendChild(tr);
+      }
+
+      tr.appendChild(td);
     });
 
-    loading?.classList.add('d-none'); content?.classList.remove('d-none'); wrapper?.classList.remove('d-none');
-  }
+    tbody.appendChild(tr);
+  });
+
+  loading?.classList.add('d-none');
+  content?.classList.remove('d-none');
+  wrapper?.classList.remove('d-none');
+}
+
 
   async function loadKpiGridDetailTableTgr() { try { const res = await fetch(`${B2B_API_URL}?type=kpi_grid_table`); const json = await res.json(); if (!json || !Array.isArray(json.data)) return; renderKpiGridDetailTable(json.headers,json.data,'b2cKpiGridTableWrapper','b2cKpiGridTableLoading','b2cKpiGridTableContent'); } catch(e){console.error(e);} }
   async function loadKpiGridDetailTableBtn() { try { const res = await fetch(`${B2B_API_URL}?type=kpi_grid_table_btn`); const json = await res.json(); if (!json || !Array.isArray(json.data)) return; renderKpiGridDetailTable(json.headers,json.data,'b2cKpiGridTableBtnWrapper','b2cKpiGridTableBtnLoading','b2cKpiGridTableBtnContent'); } catch(e){console.error(e);} }
