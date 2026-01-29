@@ -1,20 +1,71 @@
 /* ===========================
-   OVERRIDES / FIXES
-   =========================== */
+   OVERRIDES / FIXES (FINAL)
+=========================== */
 
-/* Example fix for tables inside cards */
+/* ===========================
+   CARD TABLE FIX
+=========================== */
 .card table {
-    border: none;
+  border: none;
 }
 
-.card table th, .card table td {
-    padding: 0.5rem 0.25rem;
+.card table th,
+.card table td {
+  padding: 0.5rem 0.25rem;
 }
 
+
+/* ===========================
+   GLOBAL FORCE LIGHT TABLE
+   (Override Bootstrap table-dark)
+=========================== */
+table,
+.table,
+.table-dark {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+.table th,
+.table-dark th {
+  background: #1a2a6c !important;
+  color: #ffffff !important;
+}
+
+.table td,
+.table-dark td {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+  border-color: #adb5bd;
+}
+
+.table tbody tr:hover td,
+.table-dark tbody tr:hover td {
+  background-color: #f1f1f1 !important;
+}
+
+
+/* ===========================
+   DASHBOARD B2C TABLE ONLY
+=========================== */
+#dashboard-b2c-wrapper table {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
+#dashboard-b2c-wrapper table th {
+  background: #1a2a6c !important;
+  color: #ffffff !important;
+}
+
+
+/* ===========================
+   LOADING OVERLAY
+=========================== */
 #dashboard-b2b-loading {
   position: absolute;
   inset: 0;
-  background: rgba(255,255,255,0.85); /* tema putih */
+  background: rgba(255,255,255,0.85);
   z-index: 50;
   display: flex;
   align-items: center;
@@ -32,12 +83,16 @@
   width: 36px;
   height: 36px;
   border: 4px solid rgba(0,0,0,.1);
-  border-top-color: #00BCD4; /* accent cyan */
+  border-top-color: #00BCD4;
   border-radius: 50%;
   animation: spin .8s linear infinite;
   margin-bottom: 8px;
 }
 
+
+/* ===========================
+   KPI TOOLTIP
+=========================== */
 .kpi-tooltip {
   position: absolute;
   bottom: 110%;
@@ -56,7 +111,10 @@
   display: block;
 }
 
-/* ===== GLOBAL MODAL OVERRIDE ===== */
+
+/* ===========================
+   GLOBAL MODAL OVERRIDE
+=========================== */
 #global-modal .modal-content {
   background-color: #1a2a6c;
   color: #ffffff;
@@ -66,7 +124,22 @@
   border-bottom: 1px solid rgba(255,255,255,.2);
 }
 
+/* modal table -> LIGHT */
+#global-modal table {
+  background-color: #ffffff !important;
+  color: #333333 !important;
+}
+
 #global-modal table th {
-  background: #FFFFFF;
-  color: #333333;
+  background: #f8f9fa !important;
+  color: #333333 !important;
+}
+
+#global-modal table td {
+  background: #ffffff !important;
+  color: #333333 !important;
+}
+
+#global-modal table tbody tr:hover td {
+  background-color: #f1f1f1 !important;
 }
