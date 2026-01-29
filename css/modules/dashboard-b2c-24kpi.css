@@ -152,11 +152,9 @@
 }
 
 .kpi-category-cards {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 14px;
-  flex: 1;
 }
 
 .kpi-card {
