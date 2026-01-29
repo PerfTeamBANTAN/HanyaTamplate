@@ -230,23 +230,17 @@
   z-index:50;
 }
 
-/* ======================
-   KPI GRID DETAIL - SEL NOT ACH
-====================== */
 .kpi-td.kpi-not-ach {
-  color: var(--b2c-danger);           /* merah dari theme */
-  font-weight: 700;                    /* tebal */
-  background-color: rgba(220,38,38,0.1); /* merah muda transparan */
+  color: var(--b2c-danger) !important;          /* override inline style */
+  font-weight: 700 !important;
+  background-color: rgba(220,38,38,0.1) !important;
   border-radius: 6px;
   padding: 4px 8px;
-  transition: all 0.2s ease;
 }
 
-/* optional: hover efek biar lebih jelas */
 .kpi-td.kpi-not-ach:hover {
-  background-color: rgba(220,38,38,0.2);
+  background-color: rgba(220,38,38,0.2) !important;
 }
-
 
 /* ======================
    ANIMATION
