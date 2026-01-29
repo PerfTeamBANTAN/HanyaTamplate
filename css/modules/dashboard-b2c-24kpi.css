@@ -196,25 +196,6 @@
 }
 
 /* ======================
-   TABLE PREMIUM
-====================== */
-.table {
-  border-radius: 14px;
-  overflow: hidden;
-}
-
-.table thead th {
-  background: linear-gradient(135deg,#2563eb,#1e40af);
-  color: #fff;
-  font-size: 12px;
-  text-transform: uppercase;
-}
-
-.table tbody tr:hover {
-  background: #e0f2fe;
-}
-
-/* ======================
    MODAL PREMIUM
 ====================== */
 #global-modal .modal-content {
