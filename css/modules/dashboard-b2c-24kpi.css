@@ -1,7 +1,8 @@
 /* =========================================================
    DASHBOARD B2C 24 KPI - ULTIMATE PREMIUM UI
-   Full CSS - Versi 1 - Background Putih, Flex KPI Grid
+   Versi 1 - Background Putih, Flex KPI Horizontal
 ========================================================= */
+
 /* ======================
    ROOT THEME
 ====================== */
@@ -27,7 +28,6 @@
 #dashboard-b2c-wrapper {
   background: var(--b2c-bg);
   color: var(--b2c-text);
-  font-family: 'Inter', sans-serif;
 }
 
 .card,
@@ -56,7 +56,6 @@
   justify-content: space-between;
   position: relative;
   overflow: hidden;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .summary-card:hover,
@@ -65,7 +64,9 @@
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
 
-/* SUMMARY VARIANTS */
+/* ======================
+   SUMMARY VARIANTS
+====================== */
 .summary-card-v3.blue { border-left: 6px solid #3a7bd5; }
 .summary-card-v3.green { border-left: 6px solid #22c55e; }
 .summary-card-v3.orange { border-left: 6px solid #f59e0b; }
@@ -126,64 +127,71 @@
 }
 
 /* ======================
-   KPI GRID
+   KPI GRID (Versi 1, Horizontal Flex)
 ====================== */
 .b2c-kpi-wrapper {
   display: flex;
   flex-direction: column;
-  gap: 32px;
+  gap: 24px;
 }
 
-/* Kategori Title */
-.kpi-category-title {
+.kpi-category-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
   position: relative;
-  display: block;
-  padding: 12px 20px 12px 28px;
-  font-size: 15px;
+}
+
+.kpi-category-title {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  border-radius: 14px;
+  padding: 16px;
+  color: #e5e7eb;
+  font-size: 14px;
   font-weight: 700;
-  color: #0f172a;
-  background: #f3f4f6;
-  border-radius: 12px;
-  margin-bottom: 12px;
+  line-height: 1.4;
+  text-align: center;
+  min-width: 200px;
 }
 
-/* aksen vertikal gradient */
-.kpi-category-title::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 60%;
-  border-radius: 2px;
-  background: linear-gradient(180deg, #22d3ee, #38bdf8);
-  box-shadow: 0 0 10px rgba(56,189,248,.6);
-}
-
-/* Kartu KPI */
 .kpi-category-cards {
   display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
+  flex-direction: row;
+  gap: 14px;
+  flex-wrap: nowrap;        /* kartu tetap sejajar */
+  overflow-x: auto;         /* scroll horizontal */
+  padding-bottom: 4px;
+}
+
+.kpi-category-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.kpi-category-cards::-webkit-scrollbar-thumb {
+  background: rgba(148,163,184,.5);
+  border-radius: 3px;
+}
+
+.kpi-category-cards::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 3px;
 }
 
 .kpi-card {
   background: var(--b2c-card);
-  border: 1px solid rgba(148,163,184,.2);
+  border: 1px solid rgba(148,163,184,.15);
   border-radius: 14px;
   padding: 12px 14px;
-  min-width: 220px;
-  flex: 1 1 220px;
+  min-height: 120px;
+  flex: 0 0 230px;
+
   display: flex;
   flex-direction: column;
-  gap: 6px;
-  position: relative;
-  transition: all 0.2s ease;
-}
+  justify-content: flex-start;
 
-.kpi-card.mini {
-  flex: 0 0 220px;
+  position: relative;
+  overflow: visible;
 }
 
 .kpi-card:hover {
@@ -191,72 +199,67 @@
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 
-/* KPI Title & Badge */
 .kpi-title {
   display: flex;
-  flex-direction: column;  /* wrap teks panjang */
-  gap: 4px;
+  flex-wrap: wrap;         
+  align-items: center;
+  gap: 6px;                
   font-weight: 700;
   font-size: 13px;
-  color: #0f172a;
-  word-break: break-word;
+  margin-bottom: 8px;      
+  color: var(--b2c-text);
 }
 
 .indikator-badge {
-  align-self: flex-start;
+  flex-shrink: 0;          
   background: linear-gradient(135deg,#2563eb,#1e40af);
   color: #fff;
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 11px;
-  white-space: nowrap;
+  white-space: nowrap;      
 }
 
-/* Good / Bad badge colors */
+/* GOOD → aksen hijau tipis */
 .kpi-card.good .indikator-badge {
-  background: linear-gradient(135deg,#22c55e,#16a34a);
-  color: #f0fdf4;
+  border-color: rgba(34,197,94,.6);
+  color: #22c55e;
 }
 
+/* BAD → aksen merah tipis */
 .kpi-card.bad .indikator-badge {
-  background: linear-gradient(135deg,#ef4444,#dc2626);
-  color: #fef2f2;
+  border-color: rgba(239,68,68,.6);
+  color: #ef4444;
 }
 
-/* Baris KPI */
 .kpi-row {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  color: #0f172a;
+  margin-bottom: 2px;
+  color: var(--b2c-text);
 }
 
-.kpi-card.good .kpi-row span:last-child {
-  font-weight: 700;
-  color: #16a34a;
+.kpi-card.good {
+  border: 2px solid var(--b2c-success);
+  box-shadow: var(--b2c-glow-good);
+  color: var(--b2c-success);
 }
 
+.kpi-card.bad {
+  border: 2px solid var(--b2c-danger);
+  box-shadow: var(--b2c-glow-bad);
+  color: var(--b2c-danger);
+}
+
+.kpi-card.good .kpi-row span:last-child,
 .kpi-card.bad .kpi-row span:last-child {
   font-weight: 700;
-  color: #dc2626;
 }
 
-/* Tooltip */
-.kpi-tooltip {
-  position: absolute;
-  bottom: 110%;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #0f172a;
-  color: #fff;
-  padding: 8px 12px;
-  border-radius: 10px;
-  font-size: 11px;
-  box-shadow: 0 0 12px rgba(37,99,235,.6);
-  z-index: 50;
-}
-
-/* Modal Premium */
+/* ======================
+   MODAL PREMIUM
+====================== */
 #global-modal .modal-content {
   background: var(--b2c-bg);
   color: var(--b2c-text);
@@ -272,4 +275,40 @@
   color: var(--b2c-text);
 }
 
+/* ======================
+   TOOLTIP KPI
+====================== */
+.kpi-tooltip {
+  position:absolute;
+  bottom:110%;
+  left:50%;
+  transform:translateX(-50%);
+  background:#0f172a;
+  color:#fff;
+  padding:8px 12px;
+  border-radius:10px;
+  font-size:11px;
+  box-shadow:0 0 12px rgba(37,99,235,.6);
+  z-index:50;
+}
 
+.kpi-td.kpi-not-ach {
+  color: var(--b2c-danger) !important;
+  font-weight: 700 !important;
+  background-color: rgba(220,38,38,0.1) !important;
+  border-radius: 6px;
+  padding: 4px 8px;
+}
+
+.kpi-td.kpi-not-ach:hover {
+  background-color: rgba(220,38,38,0.2) !important;
+}
+
+/* ======================
+   ANIMATION
+====================== */
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
+}
