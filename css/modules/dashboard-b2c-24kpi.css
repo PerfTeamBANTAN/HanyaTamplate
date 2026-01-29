@@ -180,17 +180,24 @@
 }
 
 .kpi-title {
+  display: flex;
+  flex-wrap: wrap;         /* supaya judul panjang tidak pecah layout */
+  align-items: center;
+  gap: 6px;                /* jarak antara badge dan teks */
   font-weight: 700;
   font-size: 13px;
-  margin-bottom: 8px;
+  margin-bottom: 8px;      /* jarak bawah card */
+  color: var(--b2c-text);
 }
 
 .indikator-badge {
+  flex-shrink: 0;           /* badge tetap ukuran asli */
   background: linear-gradient(135deg,#2563eb,#1e40af);
   color: #fff;
-  padding: 4px 10px;
+  padding: 3px 10px;
   border-radius: 999px;
   font-size: 11px;
+  white-space: nowrap;      /* supaya teks badge tidak wrap */
 }
 
 .kpi-row {
