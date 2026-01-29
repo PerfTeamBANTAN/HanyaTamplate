@@ -188,17 +188,26 @@
 @media (max-width: 992px) {
 .kpi-category-row {
    grid-template-columns: 1fr;
-  }
-   
+}
+
 .kpi-category-title {
   position: relative;
-  padding-left: 14px;
-  font-weight: 700;
-  letter-spacing: .4px;
-  color: #0f172a;
-  background: #f3f4f6;
-  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  
+  padding: 16px 14px; /* padding-top/bottom:16px, left/right:14px */
   margin-bottom: 12px;
+
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: .4px;
+  
+  color: #0f172a;
+  background: #f3f4f6; /* atau var(--b2c-bg) kalau mau pakai variable */
+  border-radius: 12px;
 }
 
 /* aksen vertikal gradient */
