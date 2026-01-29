@@ -1,62 +1,253 @@
-body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; }
-    .dashboard-header h4 { font-weight: 700; }
-    
-    /* ================= SUMMARY CARDS ================= */
-    .summary-card-v3 {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1rem;
-      border-radius: 1rem;
-      background: #fff;
-      box-shadow: 0 2px 12px rgba(0,0,0,.08);
-      transition: transform .3s, box-shadow .3s;
-    }
-    .summary-card-v3:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,.12); }
-    .summary-left h5 { font-size: 1.1rem; margin-bottom: .5rem; }
-    .summary-progress { height: 10px; background: #e9ecef; border-radius: 5px; overflow: hidden; margin-top: .5rem; }
-    .summary-progress-bar { height: 10px; transition: width .5s ease-in-out; }
-    .summary-footer span { margin-right: 1rem; }
+/* =====================================================
+   DASHBOARD B2C 24KPI PRO MAX PLUS ULTRA READY
+   FULLY RESPONSIVE • SAFE PRODUCTION • SMOOTH ANIMATION
+===================================================== */
 
-    .blue .summary-progress-bar { background: #0d6efd; }
-    .green .summary-progress-bar { background: #198754; }
+/* ================= GLOBAL ================= */
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f8fafc;
+  color: #111827;
+  margin: 0;
+  padding: 0;
+}
 
-    .summary-right img { width: 60px; height: 60px; border-radius: 50%; }
+.container {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem;
+}
 
-    .animate-fade-in { animation: fadeIn 1s ease forwards; opacity: 0; }
-    @keyframes fadeIn { to { opacity: 1; } }
+h4, h5 {
+  margin: 0;
+  font-weight: 600;
+}
 
-    .glow-text { text-shadow: 0 0 8px rgba(0,0,0,.15); }
+/* ================= SUMMARY CARD ================= */
+.summary-card-v3 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.25rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  min-width: 260px;
+  margin-bottom: 1rem;
+  position: relative;
+}
 
-    /* ================= KPI GRID ================= */
-    .kpi-category-row { margin-bottom: 1.5rem; }
-    .kpi-category-title { font-weight: 600; margin-bottom: .5rem; font-size: 1.05rem; }
-    .kpi-category-cards { display: flex; flex-wrap: wrap; gap: .75rem; }
-    .kpi-card { background: #fff; padding: .75rem; border-radius: .75rem; flex: 1 1 calc(25% - .75rem); min-width: 180px; position: relative; box-shadow: 0 2px 12px rgba(0,0,0,.05); transition: 0.3s; }
-    .kpi-card.good { border: 2px solid #22c55e; }
-    .kpi-card.bad { border: 2px solid #ef4444; }
-    .kpi-card:hover { transform: translateY(-2px); box-shadow: 0 4px 15px rgba(0,0,0,.1); }
-    .kpi-row { display: flex; justify-content: space-between; margin-bottom: .25rem; font-size: .9rem; }
-    .indikator-badge { font-weight: 600; }
+.summary-card-v3:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
-    .kpi-tooltip {
-      position: absolute;
-      top: -5px; left: 105%;
-      background: #fff; border: 1px solid #dee2e6; padding: .5rem; border-radius: .5rem;
-      font-size: .8rem; white-space: nowrap; box-shadow: 0 2px 8px rgba(0,0,0,.12);
-      display: none; z-index: 99;
-    }
-    .kpi-card:hover .kpi-tooltip { display: block; }
+.summary-left h5 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+  word-wrap: break-word;
+}
 
-    /* ================= BAD KPI TABLE ================= */
-    .table thead th { background: #e9ecef; font-weight: 600; }
-    .table tbody tr.table-danger { background: #f8d7da; }
-    .kpi-not-ach { color: #ef4444; font-weight: 700; }
+.summary-quote {
+  font-size: 0.85rem;
+  margin-bottom: 0.75rem;
+}
 
-    /* ================= SKELETON ================= */
-    .skeleton-card, .skeleton-kpi { background: #e0e0e0; border-radius: .5rem; min-height: 80px; animation: shimmer 1.2s infinite; }
-    @keyframes shimmer { 0% { background-position: -200px 0; } 100% { background-position: 200px 0; } }
+.summary-progress {
+  background: #e5e7eb;
+  border-radius: 8px;
+  height: 8px;
+  overflow: hidden;
+}
 
-    /* ================= RESPONSIVE ================= */
-    @media(max-width: 768px){ .kpi-card { flex: 1 1 calc(50% - .5rem); } }
-    @media(max-width: 480px){ .kpi-card { flex: 1 1 100%; } }
+.summary-progress-bar {
+  height: 100%;
+  border-radius: 8px;
+  transition: width 0.5s ease;
+}
+
+.summary-percent {
+  font-weight: 700;
+  margin-top: 0.25rem;
+}
+
+.summary-footer {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  display: flex;
+  gap: 1rem;
+}
+
+/* COLOR THEMES */
+.summary-card-v3.blue .summary-progress-bar {
+  background-color: #3b82f6;
+}
+.summary-card-v3.green .summary-progress-bar {
+  background-color: #22c55e;
+}
+.summary-card-v3.red .summary-progress-bar {
+  background-color: #ef4444;
+}
+
+/* SUMMARY IMAGE */
+.summary-right img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+/* ================= KPI GRID ================= */
+.b2c-kpi-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.kpi-category-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: #1e3a8a;
+  font-size: 0.95rem;
+}
+
+.kpi-category-cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.kpi-card {
+  flex: 1 1 220px;
+  background: #fff;
+  border-radius: 10px;
+  padding: 0.75rem 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+}
+
+.kpi-card.good {
+  border: 2px solid #22c55e;
+}
+
+.kpi-card.bad {
+  border: 2px solid #ef4444;
+}
+
+/* KPI TITLE */
+.kpi-title {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  white-space: normal;
+  word-wrap: break-word;
+  overflow-wrap: anywhere;
+  cursor: help;
+}
+
+/* KPI ROWS */
+.kpi-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  margin-bottom: 0.25rem;
+}
+
+.kpi-row span:last-child {
+  font-weight: 700;
+}
+
+/* NOT ACHIEVED */
+.kpi-not-ach {
+  color: #ef4444;
+}
+
+/* TOOLTIP */
+.kpi-tooltip {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #111827;
+  color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: normal;
+  word-wrap: break-word;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 99;
+}
+
+.kpi-card:hover .kpi-tooltip {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ================= TABLE ================= */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+thead th {
+  background: #e0f2fe;
+  color: #1e3a8a;
+  font-weight: 600;
+  padding: 0.5rem 0.75rem;
+  text-align: center;
+}
+
+tbody td {
+  padding: 0.45rem 0.65rem;
+  text-align: center;
+}
+
+.table-danger {
+  background: #fee2e2 !important;
+}
+
+/* ================= SKELETON LOADING ================= */
+.skeleton-card,
+.skeleton-kpi {
+  background: #e5e7eb;
+  border-radius: 10px;
+  min-height: 80px;
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 1; }
+  50% { opacity: 0.4; }
+  100% { opacity: 1; }
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1200px) {
+  .summary-card-v3 {
+    min-width: 200px;
+  }
+}
+
+@media (max-width: 992px) {
+  .kpi-card {
+    flex: 1 1 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .kpi-card {
+    flex: 1 1 100%;
+  }
+}
