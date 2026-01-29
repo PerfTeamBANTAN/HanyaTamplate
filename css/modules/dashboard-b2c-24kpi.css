@@ -1,12 +1,13 @@
 /* =========================================================
    DASHBOARD B2C 24 KPI - ULTIMATE PREMIUM UI
+   Versi 1 - Background Putih
 ========================================================= */
 
 /* ======================
    ROOT THEME
 ====================== */
 :root {
-  --b2c-bg: #f8fafc;
+  --b2c-bg: #ffffff; /* putih untuk seluruh dashboard */
   --b2c-card: #ffffff;
   --b2c-border: #e5e7eb;
   --b2c-text: #0f172a;
@@ -17,7 +18,8 @@
   --b2c-danger: #dc2626;
   --b2c-warning: #f59e0b;
 
-  --b2c-glow: 0 8px 24px rgba(37,99,235,.15);
+  --b2c-glow-good: 0 0 18px rgba(34,197,94,0.25);
+  --b2c-glow-bad: 0 0 18px rgba(239,68,68,0.25);
 }
 
 /* ======================
@@ -35,7 +37,7 @@
   border-radius: 16px;
   border: 1px solid var(--b2c-border);
   background: var(--b2c-card);
-  box-shadow: var(--b2c-glow);
+  box-shadow: var(--b2c-glow-good);
 }
 
 /* ======================
@@ -123,11 +125,13 @@
 }
 
 .kpi-card {
-  background: #f9fafb;
+  background: var(--b2c-card);
   border-radius: 14px;
   padding: 12px;
   border: 1px solid var(--b2c-border);
+  box-shadow: var(--b2c-glow-good);
   transition: all .2s ease;
+  position: relative;
 }
 
 .kpi-card:hover {
@@ -154,25 +158,35 @@
   justify-content: space-between;
   font-size: 12px;
   margin-bottom: 2px;
+  color: var(--b2c-text);
 }
 
 /* ======================
    KPI STATUS
 ====================== */
 .kpi-card.good {
-  border: 2px solid #22c55e;
+  border: 2px solid var(--b2c-success);
+  box-shadow: var(--b2c-glow-good);
+  color: var(--b2c-success);
 }
 
 .kpi-card.bad {
-  border: 2px solid #ef4444;
+  border: 2px solid var(--b2c-danger);
+  box-shadow: var(--b2c-glow-bad);
+  color: var(--b2c-danger);
+}
+
+.kpi-card.good .kpi-row span:last-child,
+.kpi-card.bad .kpi-row span:last-child {
+  font-weight: 700;
 }
 
 /* ======================
    MODAL PREMIUM
 ====================== */
 #global-modal .modal-content {
-  background: #f8fafc;
-  color: #0f172a;
+  background: var(--b2c-bg);
+  color: var(--b2c-text);
 }
 
 #global-modal .modal-header {
@@ -181,8 +195,8 @@
 }
 
 #global-modal table {
-  background: #fff;
-  color: #0f172a;
+  background: var(--b2c-card);
+  color: var(--b2c-text);
 }
 
 /* ======================
@@ -203,7 +217,7 @@
 }
 
 .kpi-td.kpi-not-ach {
-  color: var(--b2c-danger) !important;          /* override inline style */
+  color: var(--b2c-danger) !important;
   font-weight: 700 !important;
   background-color: rgba(220,38,38,0.1) !important;
   border-radius: 6px;
