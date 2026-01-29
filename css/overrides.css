@@ -1,5 +1,6 @@
 /* ===========================
    OVERRIDES / FIXES (FINAL)
+   + FREEZE HEADER
 =========================== */
 
 /* ===========================
@@ -42,6 +43,29 @@ table,
 .table tbody tr:hover td,
 .table-dark tbody tr:hover td {
   background-color: #f1f1f1 !important;
+}
+
+
+/* ===========================
+   FREEZE HEADER (GLOBAL)
+=========================== */
+
+/* wrapper scroll */
+.table-responsive,
+.kpi-table-scroll {
+  max-height: 400px; /* sesuaikan kebutuhan */
+  overflow-y: auto;
+  position: relative;
+}
+
+/* sticky header */
+table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  background: #1a2a6c;
+  color: #ffffff;
+  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
 }
 
 
