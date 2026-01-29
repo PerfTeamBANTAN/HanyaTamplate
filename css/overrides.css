@@ -106,13 +106,14 @@ table thead tr:nth-child(4) th {
 }
 
 /* =========================
-   FREEZE / STICKY TABLE HEADER
-   ========================= */
+   FREEZE HEADER KHUSUS DASHBOARD B2C
+========================= */
 #dashboard-b2c-wrapper .table thead th {
   position: sticky;
-  top: 0;                  /* selalu di atas saat scroll */
-  z-index: 5;              /* pastikan di atas body table */
-  background-color: inherit; /* tetap pakai warna header existing */
+  top: 0;                        /* selalu di atas saat scroll */
+  z-index: 20;                    /* lebih tinggi agar di atas body table */
+  background: #1a2a6c !important; /* pakai warna header tetap */
+  color: #ffffff !important;
 }
 
 /* ===========================
