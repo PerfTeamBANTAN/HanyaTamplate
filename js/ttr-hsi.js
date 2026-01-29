@@ -168,21 +168,38 @@ async function renderSummaryCards(API_URL) {
     });
 
   Object.values(ttrMap).forEach(d => {
-    row.innerHTML += `
-      <div class="badge-card">
-        <div class="badge-card-header">${d.indikator}</div>
-        <div class="badge-card-body">
-          <div class="row-item"><span>Target</span><span>${fmt(d.target,1)}</span></div>
-          <div class="row-item"><span>Banten</span>
-            <span class="${danger(d.BANTEN,d.target)}">${fmt(d.BANTEN)}</span>
-          </div>
-          <div class="row-item"><span>Tangerang</span>
-            <span class="${danger(d.TANGERANG,d.target)}">${fmt(d.TANGERANG)}</span>
-          </div>
-        </div>
+
+  const state = Number(d.BANTEN) < Number(d.target) ? 'card-bad' : 'card-good';
+
+  row.innerHTML += `
+    <div class="badge-card ${state}">
+      
+      <div class="badge-card-header">
+        ${d.indikator}
       </div>
-    `;
-  });
+
+      <div class="badge-card-body">
+
+        <div class="row-item">
+          <span>Target</span>
+          <span>${fmt(d.target,1)}</span>
+        </div>
+
+        <div class="row-item">
+          <span>Banten</span>
+          <span class="${danger(d.BANTEN,d.target)}">${fmt(d.BANTEN)}</span>
+        </div>
+
+        <div class="row-item">
+          <span>Tangerang</span>
+          <span class="${danger(d.TANGERANG,d.target)}">${fmt(d.TANGERANG)}</span>
+        </div>
+
+      </div>
+    </div>
+  `;
+});
+
 }
 
 /* =====================================================
