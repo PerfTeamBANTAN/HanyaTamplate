@@ -1,13 +1,13 @@
-/* =====================================================
-   DASHBOARD B2C 24KPI PRO MAX PLUS ULTRA READY
-   FULLY RESPONSIVE • SAFE PRODUCTION • SMOOTH ANIMATION
-===================================================== */
+/* =======================================================
+   DASHBOARD B2C 24KPI PREMIUM BRIGHT & READABLE
+   FULLY RESPONSIVE • PROFESSIONAL • SMOOTH ANIMATION
+======================================================= */
 
 /* ================= GLOBAL ================= */
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #f8fafc;
-  color: #111827;
+  background-color: #f4f6f8; /* light background for brightness */
+  color: #1f2937; /* dark text for readability */
   margin: 0;
   padding: 0;
 }
@@ -16,12 +16,13 @@ body {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
 }
 
 h4, h5 {
   margin: 0;
   font-weight: 600;
+  color: #111827;
 }
 
 /* ================= SUMMARY CARD ================= */
@@ -29,10 +30,10 @@ h4, h5 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
   transition: all 0.3s ease;
   min-width: 260px;
   margin-bottom: 1rem;
@@ -40,37 +41,40 @@ h4, h5 {
 }
 
 .summary-card-v3:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .summary-left h5 {
   font-size: 1rem;
   margin-bottom: 0.5rem;
   word-wrap: break-word;
+  color: #1e3a8a;
 }
 
 .summary-quote {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
+  color: #4b5563;
   margin-bottom: 0.75rem;
 }
 
 .summary-progress {
   background: #e5e7eb;
-  border-radius: 8px;
-  height: 8px;
+  border-radius: 10px;
+  height: 10px;
   overflow: hidden;
 }
 
 .summary-progress-bar {
   height: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
   transition: width 0.5s ease;
 }
 
 .summary-percent {
   font-weight: 700;
   margin-top: 0.25rem;
+  color: #111827;
 }
 
 .summary-footer {
@@ -78,17 +82,18 @@ h4, h5 {
   font-size: 0.85rem;
   display: flex;
   gap: 1rem;
+  color: #6b7280;
 }
 
 /* COLOR THEMES */
 .summary-card-v3.blue .summary-progress-bar {
-  background-color: #3b82f6;
+  background: linear-gradient(90deg, #3b82f6, #60a5fa);
 }
 .summary-card-v3.green .summary-progress-bar {
-  background-color: #22c55e;
+  background: linear-gradient(90deg, #22c55e, #4ade80);
 }
 .summary-card-v3.red .summary-progress-bar {
-  background-color: #ef4444;
+  background: linear-gradient(90deg, #ef4444, #f87171);
 }
 
 /* SUMMARY IMAGE */
@@ -97,6 +102,7 @@ h4, h5 {
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
+  border: 2px solid #e5e7eb;
 }
 
 /* ================= KPI GRID ================= */
@@ -121,32 +127,33 @@ h4, h5 {
 
 .kpi-card {
   flex: 1 1 220px;
-  background: #fff;
-  border-radius: 10px;
-  padding: 0.75rem 1rem;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 0.85rem 1rem;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.07);
   transition: all 0.3s ease;
   position: relative;
 }
 
 .kpi-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
 }
 
 .kpi-card.good {
-  border: 2px solid #22c55e;
+  border-left: 4px solid #22c55e;
 }
 
 .kpi-card.bad {
-  border: 2px solid #ef4444;
+  border-left: 4px solid #ef4444;
 }
 
 /* KPI TITLE */
 .kpi-title {
-  font-size: 0.85rem;
+  font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
+  color: #111827;
   white-space: normal;
   word-wrap: break-word;
   overflow-wrap: anywhere;
@@ -159,10 +166,12 @@ h4, h5 {
   justify-content: space-between;
   font-size: 0.85rem;
   margin-bottom: 0.25rem;
+  color: #4b5563;
 }
 
 .kpi-row span:last-child {
   font-weight: 700;
+  color: #111827;
 }
 
 /* NOT ACHIEVED */
@@ -176,10 +185,10 @@ h4, h5 {
   top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  background: #111827;
-  color: #fff;
+  background: #1f2937;
+  color: #f9fafb;
   padding: 0.5rem 0.75rem;
-  border-radius: 6px;
+  border-radius: 8px;
   font-size: 0.75rem;
   white-space: normal;
   word-wrap: break-word;
@@ -198,20 +207,29 @@ h4, h5 {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 0.85rem;
+  font-size: 0.875rem;
+  background: #ffffff;
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 thead th {
-  background: #e0f2fe;
+  background: #bfdbfe; /* soft blue header */
   color: #1e3a8a;
   font-weight: 600;
-  padding: 0.5rem 0.75rem;
+  padding: 0.6rem 0.85rem;
   text-align: center;
 }
 
 tbody td {
-  padding: 0.45rem 0.65rem;
+  padding: 0.55rem 0.75rem;
   text-align: center;
+  color: #1f2937;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+tbody tr:hover {
+  background: #f1f5f9;
 }
 
 .table-danger {
@@ -222,7 +240,7 @@ tbody td {
 .skeleton-card,
 .skeleton-kpi {
   background: #e5e7eb;
-  border-radius: 10px;
+  border-radius: 12px;
   min-height: 80px;
   animation: pulse 1.5s infinite;
 }
@@ -249,5 +267,10 @@ tbody td {
 @media (max-width: 768px) {
   .kpi-card {
     flex: 1 1 100%;
+  }
+  .summary-card-v3 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
   }
 }
