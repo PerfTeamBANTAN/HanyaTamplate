@@ -344,15 +344,3 @@
   z-index:50;
 }
 
-.kpi-td.kpi-not-ach {
-  color: var(--b2c-danger) !important;
-  font-weight: 700 !important;
-  background-color: rgba(220,38,38,0.1) !important;
-  border-radius: 6px;
-  padding: 4px 8px;
-}
-
-.kpi-td.kpi-not-ach:hover {
-  background-color: rgba(220,38,38,0.2) !important;
-}
-
