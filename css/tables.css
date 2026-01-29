@@ -130,9 +130,9 @@ table tr:hover td {
 }
 
 .kpi-not-ach {
-  background: rgba(239,83,80,.15);
-  color: #EF5350;
+  color: #ef4444 !important;
   font-weight: 700;
+  text-shadow: 0 0 6px rgba(239,68,68,.45);
 }
 
 /* ===== DISTRICT BANTEN TABLE ===== */
