@@ -1,6 +1,6 @@
 /* ===========================
    OVERRIDES / FIXES (FINAL)
-   + FREEZE HEADER
+   LIGHT TABLE + FLEXIBLE FREEZE HEADER
 =========================== */
 
 /* ===========================
@@ -47,7 +47,8 @@ table,
 
 
 /* ===========================
-   FREEZE HEADER (GLOBAL)
+   FLEXIBLE FREEZE HEADER
+   (Support multi-row thead)
 =========================== */
 
 /* wrapper scroll */
@@ -58,14 +59,36 @@ table,
   position: relative;
 }
 
-/* sticky header */
+/* base header style */
 table thead th {
   position: sticky;
-  top: 0;
-  z-index: 5;
+  z-index: 10;
   background: #1a2a6c;
   color: #ffffff;
-  box-shadow: 0 2px 2px rgba(0,0,0,0.05);
+  background-clip: padding-box;
+  box-shadow: inset 0 -1px 0 rgba(255,255,255,.25);
+}
+
+/* default row height variable */
+table thead {
+  --thead-row-height: 40px;
+}
+
+/* row offset system */
+table thead tr:nth-child(1) th {
+  top: 0;
+}
+
+table thead tr:nth-child(2) th {
+  top: var(--thead-row-height);
+}
+
+table thead tr:nth-child(3) th {
+  top: calc(var(--thead-row-height) * 2);
+}
+
+table thead tr:nth-child(4) th {
+  top: calc(var(--thead-row-height) * 3);
 }
 
 
