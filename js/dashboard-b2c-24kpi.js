@@ -157,8 +157,8 @@ window.B2C24KPI = (function () {
     if (hasBadBtn) document.getElementById('b2cTableWrapperBtn')?.classList.remove('d-none');
   }
 
-  // ================= KPI GRID DETAIL TABLE =================
-  function renderKpiGridDetailTable(headers, data, wrapperId, loadingId, contentId) {
+  // ================= KPI GRID DETAIL TABLE (FINAL) =================
+function renderKpiGridDetailTable(headers, data, wrapperId, loadingId, contentId) {
   const wrapper = document.getElementById(wrapperId);
   const loading = document.getElementById(loadingId);
   const content = document.getElementById(contentId);
@@ -166,11 +166,13 @@ window.B2C24KPI = (function () {
   const tbody = wrapper?.querySelector('tbody');
   if (!wrapper || !thead || !tbody) return;
 
+  // Reset table
   thead.innerHTML = '';
   tbody.innerHTML = '';
 
   const kpiStartIndex = headers.indexOf('Target') + 1;
 
+  // Header
   const trHead = document.createElement('tr');
   headers.forEach((h, i) => {
     const th = document.createElement('th');
@@ -180,11 +182,13 @@ window.B2C24KPI = (function () {
   });
   thead.appendChild(trHead);
 
+  // Helper: parsing angka dari string
   const parseVal = v => {
     if (v == null) return NaN;
-    return Number(String(v).replace(/\./g,'').replace(',', '.'));
+    return Number(String(v).replace(/\./g, '').replace(',', '.'));
   };
 
+  // Rows
   data.forEach(row => {
     const tr = document.createElement('tr');
 
@@ -196,13 +200,17 @@ window.B2C24KPI = (function () {
 
       if (i >= kpiStartIndex) {
         const num = parseVal(val);
-        const target = parseVal(row.Target);
+        const target = parseVal(row.Target ?? row.target);
+        const indikator = row.Indikator ?? row.indikator ?? '';
+
         if (!isNaN(num) && !isNaN(target)) {
           td.classList.add('text-end');
-          if (isNotAch(num, target, row.Indikator)) {
-            td.classList.add('kpi-not-ach'); // merah
+
+          // Merah jika tidak tercapai, hijau jika tercapai
+          if (isNotAch(num, target, indikator)) {
+            td.classList.add('kpi-not-ach'); // MERAH
           } else {
-            td.classList.add('text-success'); // hijau
+            td.classList.add('text-success'); // HIJAU
           }
         }
       }
@@ -213,10 +221,12 @@ window.B2C24KPI = (function () {
     tbody.appendChild(tr);
   });
 
+  // Show/hide loading & content
   loading?.classList.add('d-none');
   content?.classList.remove('d-none');
   wrapper?.classList.remove('d-none');
 }
+
 
 
   async function loadKpiGridDetailTableTgr() { try { const res = await fetch(`${B2B_API_URL}?type=kpi_grid_table`); const json = await res.json(); if (!json || !Array.isArray(json.data)) return; renderKpiGridDetailTable(json.headers,json.data,'b2cKpiGridTableWrapper','b2cKpiGridTableLoading','b2cKpiGridTableContent'); } catch(e){console.error(e);} }
