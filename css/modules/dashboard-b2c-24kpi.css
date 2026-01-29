@@ -1,6 +1,6 @@
 /* =========================================================
    DASHBOARD B2C 24 KPI - ULTIMATE PREMIUM UI
-   Versi 1 - Background Putih, Flex KPI Grid
+   Versi 1 - Background Putih, Flex KPI Horizontal
 ========================================================= */
 
 /* ======================
@@ -127,7 +127,7 @@
 }
 
 /* ======================
-   KPI GRID (Versi 1)
+   KPI GRID (Versi 1, Horizontal Flex)
 ====================== */
 .b2c-kpi-wrapper {
   display: flex;
@@ -140,7 +140,7 @@
   flex-direction: row;
   align-items: flex-start;
   gap: 16px;
-  flex-wrap: wrap;
+  position: relative;
 }
 
 .kpi-category-title {
@@ -151,16 +151,31 @@
   font-size: 14px;
   font-weight: 700;
   line-height: 1.4;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   text-align: center;
+  min-width: 200px;
 }
 
 .kpi-category-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  display: flex;
+  flex-direction: row;
   gap: 14px;
+  flex-wrap: nowrap;        /* kartu tetap sejajar */
+  overflow-x: auto;         /* scroll horizontal */
+  padding-bottom: 4px;
+}
+
+.kpi-category-cards::-webkit-scrollbar {
+  height: 6px;
+}
+
+.kpi-category-cards::-webkit-scrollbar-thumb {
+  background: rgba(148,163,184,.5);
+  border-radius: 3px;
+}
+
+.kpi-category-cards::-webkit-scrollbar-track {
+  background: rgba(0,0,0,0.05);
+  border-radius: 3px;
 }
 
 .kpi-card {
@@ -169,6 +184,7 @@
   border-radius: 14px;
   padding: 12px 14px;
   min-height: 120px;
+  flex: 0 0 230px;
 
   display: flex;
   flex-direction: column;
@@ -176,9 +192,6 @@
 
   position: relative;
   overflow: visible;
-   
-.kpi-card.mini {
-  flex: 0 0 220px;
 }
 
 .kpi-card:hover {
@@ -188,37 +201,36 @@
 
 .kpi-title {
   display: flex;
-  flex-wrap: wrap;         /* supaya judul panjang tidak pecah layout */
+  flex-wrap: wrap;         
   align-items: center;
-  gap: 6px;                /* jarak antara badge dan teks */
+  gap: 6px;                
   font-weight: 700;
   font-size: 13px;
-  margin-bottom: 8px;      /* jarak bawah card */
+  margin-bottom: 8px;      
   color: var(--b2c-text);
 }
 
 .indikator-badge {
-  flex-shrink: 0;           /* badge tetap ukuran asli */
+  flex-shrink: 0;          
   background: linear-gradient(135deg,#2563eb,#1e40af);
   color: #fff;
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 11px;
-  white-space: nowrap;      /* supaya teks badge tidak wrap */
+  white-space: nowrap;      
 }
 
 /* GOOD → aksen hijau tipis */
 .kpi-card.good .indikator-badge {
   border-color: rgba(34,197,94,.6);
-  color: #bbf7d0;
+  color: #22c55e;
 }
 
 /* BAD → aksen merah tipis */
 .kpi-card.bad .indikator-badge {
   border-color: rgba(239,68,68,.6);
-  color: #fecaca;
+  color: #ef4444;
 }
-
 
 .kpi-row {
   display: flex;
@@ -292,42 +304,4 @@
   background-color: rgba(220,38,38,0.2) !important;
 }
 
-.kpi-category-row::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 1px;
 
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(56,189,248,.35),
-    rgba(56,189,248,.65),
-    rgba(56,189,248,.35),
-    transparent
-  );
-
-  box-shadow:
-    0 0 6px rgba(56,189,248,.35),
-    0 0 12px rgba(56,189,248,.25);
-}
-
-.kpi-category-row::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  width: 100%;
-  height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(34,211,238,.18),
-    rgba(34,211,238,.35),
-    rgba(34,211,238,.18),
-    transparent
-  );
-}
