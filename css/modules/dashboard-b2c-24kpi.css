@@ -164,20 +164,6 @@
   padding-bottom: 4px;
 }
 
-.kpi-category-cards::-webkit-scrollbar {
-  height: 6px;
-}
-
-.kpi-category-cards::-webkit-scrollbar-thumb {
-  background: rgba(148,163,184,.5);
-  border-radius: 3px;
-}
-
-.kpi-category-cards::-webkit-scrollbar-track {
-  background: rgba(0,0,0,0.05);
-  border-radius: 3px;
-}
-
 .kpi-card {
   background: var(--b2c-card);
   border: 1px solid rgba(148,163,184,.15);
