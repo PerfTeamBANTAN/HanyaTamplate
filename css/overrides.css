@@ -105,6 +105,15 @@ table thead tr:nth-child(4) th {
   color: #ffffff !important;
 }
 
+/* =========================
+   FREEZE / STICKY TABLE HEADER
+   ========================= */
+#dashboard-b2c-wrapper .table thead th {
+  position: sticky;
+  top: 0;                  /* selalu di atas saat scroll */
+  z-index: 5;              /* pastikan di atas body table */
+  background-color: inherit; /* tetap pakai warna header existing */
+}
 
 /* ===========================
    LOADING OVERLAY
