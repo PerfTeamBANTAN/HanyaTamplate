@@ -146,6 +146,11 @@ function getDetailEndpoint(type, header) {
 async function renderSummaryCards(API_URL) {
 
   const row = document.getElementById('ttr-row');
+  if (!row) {
+    console.warn('Element #ttr-row belum ada di DOM');
+    return;
+  }
+
   row.innerHTML = '';
 
   const kpiJson = await fetchJSONP(API_URL + '?type=kpi');
@@ -166,10 +171,14 @@ async function renderSummaryCards(API_URL) {
     row.innerHTML += `
       <div class="badge-card">
         <div class="badge-card-header">${d.indikator}</div>
-        <div class="badge-card-body text-dark">
+        <div class="badge-card-body">
           <div class="row-item"><span>Target</span><span>${fmt(d.target,1)}</span></div>
-          <div class="row-item"><span>Banten</span><span class="${danger(d.BANTEN,d.target)}">${fmt(d.BANTEN)}</span></div>
-          <div class="row-item"><span>Tangerang</span><span class="${danger(d.TANGERANG,d.target)}">${fmt(d.TANGERANG)}</span></div>
+          <div class="row-item"><span>Banten</span>
+            <span class="${danger(d.BANTEN,d.target)}">${fmt(d.BANTEN)}</span>
+          </div>
+          <div class="row-item"><span>Tangerang</span>
+            <span class="${danger(d.TANGERANG,d.target)}">${fmt(d.TANGERANG)}</span>
+          </div>
         </div>
       </div>
     `;
