@@ -7,7 +7,7 @@
    ROOT THEME
 ====================== */
 :root {
-  --b2c-bg: #ffffff; /* putih untuk seluruh dashboard */
+  --b2c-bg: #ffffff;
   --b2c-card: #ffffff;
   --b2c-border: #e5e7eb;
   --b2c-text: #0f172a;
@@ -18,18 +18,21 @@
   --b2c-danger: #dc2626;
   --b2c-warning: #f59e0b;
 
-  --b2c-glow-good: 0 0 18px rgba(34,197,94,0.25);
+  --b2c-glow-good: 0 4px 14px rgba(0,0,0,0.06);
   --b2c-glow-bad: 0 0 18px rgba(239,68,68,0.25);
 }
 
 /* ======================
-   GENERAL
+   GENERAL WRAPPER
 ====================== */
 #dashboard-b2c-wrapper {
   background: var(--b2c-bg);
   color: var(--b2c-text);
 }
 
+/* ======================
+   CARD / KPI
+====================== */
 .card,
 .kpi-card,
 .summary-card-v3,
@@ -38,6 +41,13 @@
   border: 1px solid var(--b2c-border);
   background: var(--b2c-card);
   box-shadow: var(--b2c-glow-good);
+  transition: all .2s ease;
+  position: relative;
+}
+
+.kpi-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 
 /* ======================
@@ -49,19 +59,14 @@
 }
 
 .summary-card-v3::before {
-  content:'';
-  position:absolute;
-  inset:0;
-  background: linear-gradient(120deg,transparent,rgba(37,99,235,.05));
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(120deg, transparent, rgba(37,99,235,.05));
 }
 
-.summary-card-v3.blue {
-  border-left: 6px solid var(--b2c-primary);
-}
-
-.summary-card-v3.green {
-  border-left: 6px solid var(--b2c-success);
-}
+.summary-card-v3.blue { border-left: 6px solid var(--b2c-primary); }
+.summary-card-v3.green { border-left: 6px solid var(--b2c-success); }
 
 .summary-left h5 {
   font-size: 16px;
@@ -124,21 +129,6 @@
   gap: 14px;
 }
 
-.kpi-card {
-  background: var(--b2c-card);
-  border-radius: 14px;
-  padding: 12px;
-  border: 1px solid var(--b2c-border);
-  box-shadow: var(--b2c-glow-good);
-  transition: all .2s ease;
-  position: relative;
-}
-
-.kpi-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 24px rgba(0,0,0,.12);
-}
-
 .kpi-title {
   font-weight: 700;
   font-size: 13px;
@@ -161,9 +151,7 @@
   color: var(--b2c-text);
 }
 
-/* ======================
-   KPI STATUS
-====================== */
+/* KPI STATUS */
 .kpi-card.good {
   border: 2px solid var(--b2c-success);
   box-shadow: var(--b2c-glow-good);
@@ -232,7 +220,7 @@
    ANIMATION
 ====================== */
 @keyframes float {
-  0%{transform:translateY(0);}
-  50%{transform:translateY(-6px);}
-  100%{transform:translateY(0);}
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+  100% { transform: translateY(0); }
 }
