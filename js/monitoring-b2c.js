@@ -1,39 +1,6 @@
 /* =====================================================
    MONITORING B2C HI (B2B STYLE)
 ===================================================== */
-
-/* ===== UI POLISH ===== */
-(function injectB2CStyle(){
-  if (document.getElementById('b2c-ui-polish')) return;
-
-  const style = document.createElement('style');
-  style.id = 'b2c-ui-polish';
-  style.textContent = `
-    td.clickable{
-      cursor:pointer;
-      transition:background .15s ease,color .15s ease,transform .08s ease;
-    }
-    td.clickable:hover{ background:rgba(255,255,255,.06); }
-    td.clickable:active{ transform:scale(.97); }
-
-    #monitoring-b2c-body tr:hover td{
-      background:rgba(255,255,255,.045);
-    }
-
-    #monitoring-b2c-body td.zero{
-      color:rgba(255,255,255,.35);
-      font-weight:500;
-    }
-
-    #monitoring-b2c-body tr.total-row td{
-      background:#0f172a!important;
-      font-weight:800;
-      border-top:2px solid #38bdf8;
-    }
-  `;
-  document.head.appendChild(style);
-})();
-
 function initMonitoringB2C(API_URL){
 
   window.API_URL = API_URL;
