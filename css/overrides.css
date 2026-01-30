@@ -36,8 +36,8 @@ table,
 .table td,
 .table-dark td {
   background-color: #ffffff !important;
+  color: #333333 !important;
 }
-
 
 .table tbody tr:hover td,
 .table-dark tbody tr:hover td {
@@ -53,7 +53,7 @@ table,
 /* wrapper scroll */
 .table-responsive,
 .kpi-table-scroll {
-  max-height: 400px; /* sesuaikan kebutuhan */
+  max-height: 400px;
   overflow-y: auto;
   position: relative;
 }
@@ -74,21 +74,10 @@ table thead {
 }
 
 /* row offset system */
-table thead tr:nth-child(1) th {
-  top: 0;
-}
-
-table thead tr:nth-child(2) th {
-  top: var(--thead-row-height);
-}
-
-table thead tr:nth-child(3) th {
-  top: calc(var(--thead-row-height) * 2);
-}
-
-table thead tr:nth-child(4) th {
-  top: calc(var(--thead-row-height) * 3);
-}
+table thead tr:nth-child(1) th { top: 0; }
+table thead tr:nth-child(2) th { top: var(--thead-row-height); }
+table thead tr:nth-child(3) th { top: calc(var(--thead-row-height) * 2); }
+table thead tr:nth-child(4) th { top: calc(var(--thead-row-height) * 3); }
 
 
 /* ===========================
@@ -108,11 +97,12 @@ table thead tr:nth-child(4) th {
 ========================= */
 #dashboard-b2c-wrapper .table thead th {
   position: sticky;
-  top: 0;                        /* selalu di atas saat scroll */
-  z-index: 20;                    /* lebih tinggi agar di atas body table */
-  background: #1a2a6c !important; /* pakai warna header tetap */
+  top: 0;
+  z-index: 20;
+  background: #1a2a6c !important;
   color: #ffffff !important;
 }
+
 
 /* ===========================
    LOADING OVERLAY
@@ -170,7 +160,6 @@ table thead tr:nth-child(4) th {
 /* ===========================
    GLOBAL MODAL (LIGHT THEME)
 =========================== */
-
 #global-modal .modal-content {
   background: #ffffff;
   color: #333333;
@@ -193,13 +182,11 @@ table thead tr:nth-child(4) th {
   filter: none;
 }
 
-/* modal body */
 #global-modal .modal-body {
   background: #ffffff;
   color: #333333;
 }
 
-/* modal table tetap light */
 #global-modal table {
   background-color: #ffffff !important;
   color: #333333 !important;
@@ -218,4 +205,26 @@ table thead tr:nth-child(4) th {
 
 #global-modal table tbody tr:hover td {
   background-color: #f1f1f1 !important;
+}
+
+
+/* ===========================
+   🔥 BOOTSTRAP VARIABLE FIX (CRITICAL)
+=========================== */
+.table-dark {
+  --bs-table-color: #333333 !important;
+  --bs-table-bg: #ffffff !important;
+  --bs-table-border-color: #adb5bd !important;
+  --bs-table-striped-color: #333333 !important;
+  --bs-table-hover-color: #333333 !important;
+}
+
+.table-dark td {
+  color: #333333 !important;
+}
+
+/* KPI merah tetap merah */
+td.kpi-not-ach {
+  color: #ef4444 !important;
+  font-weight: 700;
 }
