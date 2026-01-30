@@ -222,7 +222,7 @@ function openDetailB2C(tr,mode){
 
       let html=`
       <div class="table-responsive">
-      <table class="table table-dark table-striped table-sm">
+      <table class="table table-striped table-sm">
       <thead>
         <tr>
           <th>INCIDENT</th>
@@ -338,7 +338,7 @@ function openTotalDetailB2C(colIndex){
 
       let html = `
         <div class="table-responsive">
-        <table class="table table-dark table-striped table-sm">
+        <table class="table table-striped table-sm">
         <thead>
           <tr>
             <th>INCIDENT</th>
