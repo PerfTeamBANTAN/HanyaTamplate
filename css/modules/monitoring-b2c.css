@@ -1,5 +1,5 @@
 /* =========================
-   MONITORING B2C MODULE ONLY
+   MONITORING B2C MODULE ONLY (LIGHT)
 ========================= */
 
 #monitoring-b2c-update {
@@ -11,11 +11,38 @@
   opacity: 1;
 }
 
-/* total row */
+/* =========================
+   TOTAL ROW (LIGHT VERSION)
+========================= */
 #monitoring-b2c-body tr.total-row td {
-  background: linear-gradient(90deg, #1a2a6c, #b21f1f);
-  color: #fff;
-  font-weight: 800;
-  border-top: 2px solid var(--accent-color);
+  background: #0ea5e9 !important;   /* biru soft */
+  color: #ffffff !important;
+  font-weight: 700;
+  border-top: 2px solid #0284c7;
 }
 
+/* =========================
+   FIX BAR HITAM KOSONG
+========================= */
+#monitoring-b2c-body tr {
+  background: transparent !important;
+}
+
+#monitoring-b2c-body tr:hover td {
+  background: #e0f2fe !important;
+}
+
+/* jika ada row kosong */
+#monitoring-b2c-body tr:has(td:empty) td {
+  background: transparent !important;
+}
+
+/* clickable hover */
+#monitoring-b2c-body td.clickable:hover {
+  background: #bae6fd !important;
+}
+
+/* zero value */
+#monitoring-b2c-body td.zero {
+  color: #94a3b8;
+}
