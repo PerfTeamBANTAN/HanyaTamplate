@@ -173,12 +173,16 @@
 }
 
 .kpi-card.mini {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   background: #fff;
   border-radius: 10px;
-  padding: 10px;
-  border: 1px solid #eee;
+  padding: 14px 14px 16px;
+  border: 1px solid rgba(148,163,184,.15);
+  box-shadow: 0 8px 24px rgba(0,0,0,.35);
   position: relative;
-  transition: .2s;
+  transition: all .25s ease;
 }
 
 .badge-gold { background: gold; }
