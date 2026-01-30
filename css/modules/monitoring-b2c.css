@@ -72,3 +72,24 @@
   background-color: transparent !important;
 }
 
+td.clickable{
+  cursor:pointer;
+  transition: background .15s ease, color .15s ease, transform .08s ease;
+}
+
+#monitoring-b2c-body tr:hover td{
+  background:#e0f2fe;
+  color:#1e293b;
+}
+
+#monitoring-b2c-body td.zero{
+  color:#94a3b8;
+}
+
+#monitoring-b2c-body tr.total-row td{
+  background:#0ea5e9;
+  color:#fff;
+  font-weight:700;
+  border-top:2px solid #0284c7;
+}
+
