@@ -24,7 +24,6 @@ table,
 .table,
 .table-dark {
   background-color: #ffffff !important;
-  color: #333333 !important;
 }
 
 .table th,
@@ -36,9 +35,8 @@ table,
 .table td,
 .table-dark td {
   background-color: #ffffff !important;
-  color: #333333 !important;
-  border-color: #adb5bd;
 }
+
 
 .table tbody tr:hover td,
 .table-dark tbody tr:hover td {
@@ -97,7 +95,6 @@ table thead tr:nth-child(4) th {
 =========================== */
 #dashboard-b2c-wrapper table {
   background-color: #ffffff !important;
-  color: #333333 !important;
 }
 
 #dashboard-b2c-wrapper table th {
@@ -215,7 +212,6 @@ table thead tr:nth-child(4) th {
 
 #global-modal table td {
   background: #ffffff !important;
-  color: #333333 !important;
 }
 
 #global-modal table tbody tr:hover td {
