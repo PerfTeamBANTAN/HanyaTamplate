@@ -228,3 +228,31 @@ td.kpi-not-ach {
   color: #ef4444 !important;
   font-weight: 700;
 }
+
+/* ===========================
+   FILTER CARD = THEME HEADER
+=========================== */
+.card.bg-dark.border-secondary {
+  background-color: #1a2a6c !important;
+  border-color: #0dcaf0 !important;
+  color: #ffffff !important;
+}
+
+/* label */
+.card.bg-dark.border-secondary .form-label {
+  color: #e0f2fe !important;
+}
+
+/* select input */
+.card.bg-dark.border-secondary select {
+  background-color: #ffffff !important;
+  color: #1e293b !important;
+  border: 1px solid #0dcaf0 !important;
+}
+
+/* focus */
+.card.bg-dark.border-secondary select:focus {
+  border-color: #38bdf8 !important;
+  box-shadow: 0 0 0 0.15rem rgba(56,189,248,.35);
+}
+
