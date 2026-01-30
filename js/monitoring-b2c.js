@@ -72,9 +72,9 @@ function initMonitoringB2C(API_URL){
 <td class="clickable sqm_total">${row[22]}</td>
 <td class="clickable sqm_open">${row[23]}</td>
 
-<td class="clickable ffg">${row[24]}</td>   <!-- ✅ FFG -->
-<td>${row[25]}</td>
-<td>${row[26]}</td>
+<td class="clickable ffg">${row[24]}</td>
+<td class="clickable sqm_total">${row[25]}</td>
+<td class="clickable sqm_open">${row[26]}</td>
 `;
 
         tbody.appendChild(tr);
@@ -106,29 +106,30 @@ function initMonitoringB2C(API_URL){
 /* ================= TOTAL ================= */
 function renderB2CTotalRow(){
 
-  const tbody=document.getElementById('monitoring-b2c-body');
+  const tbody = document.getElementById('monitoring-b2c-body');
   tbody.querySelector('.total-row')?.remove();
 
-  const total=new Array(28).fill(0);
+  const COL_COUNT = 28; // HARUS sama dengan jumlah <th>
+  const total = new Array(COL_COUNT).fill(0);
 
   tbody.querySelectorAll('tr').forEach(tr=>{
     if(tr.style.display==='none') return;
     if(tr.classList.contains('total-row')) return;
 
     tr.querySelectorAll('td').forEach((td,i)=>{
-      if(i>=4){
-        total[i]+=Number(td.textContent)||0;
+      if(i >= 4 && i < COL_COUNT){
+        total[i] += Number(td.textContent) || 0;
       }
     });
   });
 
-  const tr=document.createElement('tr');
-  tr.className='total-row';
+  const tr = document.createElement('tr');
+  tr.className = 'total-row header-like';
 
-  tr.innerHTML=`
-    <td colspan="4" class="text-center">TOTAL</td>
-    ${total.slice(4).map((v,i)=>`
-      <td class="clickable total-cell" data-index="${i+4}">${v}</td>
+  tr.innerHTML = `
+    <td colspan="4" class="text-center fw-bold">TOTAL</td>
+    ${total.slice(4, COL_COUNT).map((v,i)=>`
+      <td class="fw-bold total-cell" data-index="${i+4}">${v}</td>
     `).join('')}
   `;
 
@@ -138,6 +139,7 @@ function renderB2CTotalRow(){
     td.addEventListener('click',()=>openTotalDetailB2C(td.dataset.index));
   });
 }
+
 
 /* ================= FILTER ================= */
 function applyB2CFilter(){
