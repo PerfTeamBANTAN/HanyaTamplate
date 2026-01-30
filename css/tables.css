@@ -126,7 +126,10 @@ table tr:hover td {
 }
 
 .kpi-td {
-  font-size: 13px;
+  font-size: 11.5px;
+  padding: 4px 6px;
+  white-space: nowrap;
+  color: #e5e7eb;
 }
 
 .kpi-not-ach {
