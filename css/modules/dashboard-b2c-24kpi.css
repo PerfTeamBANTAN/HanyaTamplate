@@ -201,3 +201,17 @@
   box-shadow: 0 0 12px rgba(37,99,235,.6);
   z-index: 50;
 }
+
+/* animation helper from JS */
+#dashboard-b2c-wrapper .hover-glow:hover {
+  box-shadow: 0 0 18px rgba(59,130,246,.6);
+}
+
+#dashboard-b2c-wrapper .ultra-smooth {
+  transition: width .5s ease;
+}
+
+#dashboard-b2c-wrapper .ultra-tooltip {
+  animation: fadeIn .25s ease;
+}
+
