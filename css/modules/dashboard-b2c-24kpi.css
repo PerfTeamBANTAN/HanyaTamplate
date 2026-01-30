@@ -291,18 +291,6 @@
   margin-bottom: 2px;
   color: var(--b2c-text);
 }
-
-.kpi-card.mini {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  padding: 14px 14px 16px;
-  border-radius: 14px;
-  background: linear-gradient(180deg, #0f172a, #020617);
-  border: 1px solid rgba(148,163,184,.15);
-  box-shadow: 0 8px 24px rgba(0,0,0,.35);
-  transition: all .25s ease;
-}
    
 .kpi-card.good {
   border: 2px solid var(--b2c-success);
