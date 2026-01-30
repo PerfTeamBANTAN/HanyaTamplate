@@ -1,12 +1,11 @@
 /* =========================================================
-   DASHBOARD B2C 24 KPI - ULTIMATE PREMIUM UI
-   Versi 1 - Background Putih, Flex KPI Horizontal
+   DASHBOARD B2C 24 KPI - PREMIUM UI (CLEAN VERSION)
 ========================================================= */
 
 /* ======================
    ROOT THEME
 ====================== */
-:root {
+#dashboard-b2c-wrapper {
   --b2c-bg: #ffffff;
   --b2c-card: #ffffff;
   --b2c-border: #e5e7eb;
@@ -20,328 +19,185 @@
 
   --b2c-glow-good: 0 0 18px rgba(34,197,94,0.25);
   --b2c-glow-bad: 0 0 18px rgba(239,68,68,0.25);
-}
 
-/* ======================
-   GENERAL
-====================== */
-#dashboard-b2c-wrapper {
   background: var(--b2c-bg);
   color: var(--b2c-text);
-}
-
-.card,
-.kpi-card,
-.summary-card-v3,
-.modal-content {
-  border-radius: 16px;
-  border: 1px solid var(--b2c-border);
-  background: var(--b2c-card);
-  box-shadow: var(--b2c-glow-good);
-  transition: all .2s ease;
 }
 
 /* ======================
    SUMMARY CARDS
 ====================== */
-.summary-card,
-.summary-card-v3 {
+#dashboard-b2c-wrapper .summary-card,
+#dashboard-b2c-wrapper .summary-card-v3 {
   background: var(--b2c-card);
   border-radius: 16px;
   padding: 16px;
-  color: var(--b2c-text);
-  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   border: 1px solid var(--b2c-border);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.06);
   display: flex;
   justify-content: space-between;
   position: relative;
-  overflow: hidden;
+  transition: .2s ease;
 }
 
-.summary-card:hover,
-.summary-card-v3:hover {
+#dashboard-b2c-wrapper .summary-card:hover,
+#dashboard-b2c-wrapper .summary-card-v3:hover {
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(0,0,0,0.08);
 }
 
-/* ======================
-   SUMMARY VARIANTS
-====================== */
-.summary-card-v3.blue { border-left: 6px solid #3a7bd5; }
-.summary-card-v3.green { border-left: 6px solid #22c55e; }
-.summary-card-v3.orange { border-left: 6px solid #f59e0b; }
-.summary-card-v3.red { border-left: 6px solid #ef4444; }
+/* variants */
+#dashboard-b2c-wrapper .summary-card-v3.blue { border-left: 6px solid #3a7bd5; }
+#dashboard-b2c-wrapper .summary-card-v3.green { border-left: 6px solid #22c55e; }
+#dashboard-b2c-wrapper .summary-card-v3.orange { border-left: 6px solid #f59e0b; }
+#dashboard-b2c-wrapper .summary-card-v3.red { border-left: 6px solid #ef4444; }
 
-.summary-left h5 {
+#dashboard-b2c-wrapper .summary-left h5 {
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 4px;
-  color: #1a2a6c;
 }
 
-.summary-quote {
+#dashboard-b2c-wrapper .summary-quote {
   font-size: 13px;
-  color: #6b7280;
+  color: var(--b2c-muted);
   margin-bottom: 10px;
 }
 
-.summary-percent {
+#dashboard-b2c-wrapper .summary-percent {
   font-size: 22px;
   font-weight: 800;
-  color: #1a2a6c;
 }
 
-.glow-text {
-  text-shadow: 0 0 6px rgba(58,123,213,.4);
-}
-
-.summary-progress {
+#dashboard-b2c-wrapper .summary-progress {
   height: 7px;
   background: #e5e7eb;
   border-radius: 999px;
   overflow: hidden;
-  margin-top: 6px;
 }
 
-.summary-progress-bar {
+#dashboard-b2c-wrapper .summary-progress-bar {
   height: 100%;
   background: linear-gradient(90deg,#1a2a6c,#3a7bd5);
-  border-radius: 999px;
-  transition: width .4s ease;
 }
 
-.summary-footer {
+#dashboard-b2c-wrapper .summary-footer {
   display: flex;
   gap: 12px;
   font-size: 12px;
-  color: #374151;
   margin-top: 6px;
 }
 
-.summary-footer span { white-space: nowrap; }
-
-.summary-avatar {
-  width: 80px;
-  opacity: .95;
-  animation: float 3s ease-in-out infinite;
-}
-
 /* ======================
-   KPI GRID (Versi 1, Horizontal Flex)
+   KPI GRID
 ====================== */
-.b2c-kpi-wrapper {
+#dashboard-b2c-wrapper .b2c-kpi-wrapper {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
-.kpi-category-row {
+#dashboard-b2c-wrapper .kpi-category-row {
   display: grid;
   grid-template-columns: 240px 1fr;
   gap: 16px;
-  align-items: stretch;
-  position: relative;
   padding: 20px 0 26px;
-  margin-bottom: 26px;
+  position: relative;
 }
 
-.kpi-category-row::after {
+#dashboard-b2c-wrapper .kpi-category-row::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: 0;
   width: 100%;
   height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(56,189,248,.35),
-    rgba(56,189,248,.65),
-    rgba(56,189,248,.35),
-    transparent
-  );
-
-  box-shadow:
-    0 0 6px rgba(56,189,248,.35),
-    0 0 12px rgba(56,189,248,.25);
+  background: linear-gradient(90deg,transparent,rgba(56,189,248,.6),transparent);
 }
 
-.kpi-category-row::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: -10px;
-  width: 100%;
-  height: 1px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(34,211,238,.18),
-    rgba(34,211,238,.35),
-    rgba(34,211,238,.18),
-    transparent
-  );
-}
-
-@media (max-width: 992px) {
-.kpi-category-row {
-   grid-template-columns: 1fr;
-}
-
-.kpi-category-title {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  
-  padding: 16px 14px; /* padding-top/bottom:16px, left/right:14px */
-  margin-bottom: 12px;
-
-  font-size: 14px;
-  font-weight: 700;
-  line-height: 1.4;
-  letter-spacing: .4px;
-  
-  color: #0f172a;
-  background: #f3f4f6; /* atau var(--b2c-bg) kalau mau pakai variable */
-  border-radius: 12px;
-}
-
-/* aksen vertikal gradient */
-.kpi-category-title::before {
-  content: "";
-  position: absolute;
-  left: 12px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 4px;
-  height: 60%;
-  border-radius: 2px;
-  background: linear-gradient(180deg, #22d3ee, #38bdf8);
-  box-shadow: 0 0 10px rgba(56,189,248,.6);
-}
-
-.kpi-category-cards {
+/* ======================
+   KPI CARD
+====================== */
+#dashboard-b2c-wrapper .kpi-category-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  grid-template-columns: repeat(auto-fit,minmax(230px,1fr));
   gap: 14px;
 }
 
-.kpi-card {
+#dashboard-b2c-wrapper .kpi-card {
   background: var(--b2c-card);
-  border: 1px solid rgba(148,163,184,.15);
   border-radius: 14px;
   padding: 12px 14px;
   min-height: 120px;
-  flex: 0 0 230px;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  position: relative;
-  overflow: visible;
+  border: 1px solid rgba(148,163,184,.15);
+  transition: .25s ease;
 }
 
-.kpi-card:hover {
+#dashboard-b2c-wrapper .kpi-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 10px 24px rgba(0,0,0,.12);
 }
 
-.kpi-title {
+#dashboard-b2c-wrapper .kpi-title {
   display: flex;
-  flex-wrap: wrap;         
-  align-items: center;
-  gap: 6px;                
+  gap: 6px;
   font-weight: 700;
   font-size: 13px;
-  margin-bottom: 8px;      
-  color: var(--b2c-text);
+  margin-bottom: 8px;
 }
 
-.indikator-badge {
-  flex-shrink: 0;          
+#dashboard-b2c-wrapper .indikator-badge {
   background: linear-gradient(135deg,#2563eb,#1e40af);
   color: #fff;
   padding: 3px 10px;
   border-radius: 999px;
   font-size: 11px;
-  white-space: nowrap;      
 }
 
-/* GOOD → aksen hijau tipis */
-.kpi-card.good .indikator-badge {
-  border-color: rgba(34,197,94,.6);
-  color: #22c55e;
-}
-
-/* BAD → aksen merah tipis */
-.kpi-card.bad .indikator-badge {
-  border-color: rgba(239,68,68,.6);
-  color: #ef4444;
-}
-
-.kpi-row {
+#dashboard-b2c-wrapper .kpi-row {
   display: flex;
   justify-content: space-between;
   font-size: 12px;
-  margin-bottom: 2px;
-  color: var(--b2c-text);
 }
-   
-.kpi-card.good {
+
+/* states */
+#dashboard-b2c-wrapper .kpi-card.good {
   border: 2px solid var(--b2c-success);
   box-shadow: var(--b2c-glow-good);
   color: var(--b2c-success);
 }
 
-.kpi-card.bad {
+#dashboard-b2c-wrapper .kpi-card.bad {
   border: 2px solid var(--b2c-danger);
   box-shadow: var(--b2c-glow-bad);
   color: var(--b2c-danger);
 }
 
-.kpi-card.good .kpi-row span:last-child,
-.kpi-card.bad .kpi-row span:last-child {
-  font-weight: 700;
-}
-
-   
 /* ======================
-   MODAL PREMIUM
+   MODAL
 ====================== */
-#global-modal .modal-content {
+#dashboard-b2c-wrapper #global-modal .modal-content {
   background: var(--b2c-bg);
   color: var(--b2c-text);
 }
 
-#global-modal .modal-header {
+#dashboard-b2c-wrapper #global-modal .modal-header {
   background: linear-gradient(135deg,#2563eb,#1e40af);
   color: #fff;
 }
 
-#global-modal table {
-  background: var(--b2c-card);
-  color: var(--b2c-text);
-}
-
 /* ======================
-   TOOLTIP KPI
+   TOOLTIP
 ====================== */
-.kpi-tooltip {
-  position:absolute;
-  bottom:110%;
-  left:50%;
-  transform:translateX(-50%);
-  background:#0f172a;
-  color:#fff;
-  padding:8px 12px;
-  border-radius:10px;
-  font-size:11px;
-  box-shadow:0 0 12px rgba(37,99,235,.6);
-  z-index:50;
+#dashboard-b2c-wrapper .kpi-tooltip {
+  position: absolute;
+  bottom: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #0f172a;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 10px;
+  font-size: 11px;
+  box-shadow: 0 0 12px rgba(37,99,235,.6);
+  z-index: 50;
 }
-
