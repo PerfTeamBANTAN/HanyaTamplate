@@ -14,7 +14,7 @@ function initMonitoringB2C(API_URL){
 
   window.B2C_ACTIVE_FILTER = { sto:'', witel:'', hsa:'' };
 
-  tbody.innerHTML = `<tr><td colspan="28" class="text-center">Loading...</td></tr>`;
+  tbody.innerHTML = `<tr><td colspan="27" class="text-center">Loading...</td></tr>`;
 
   fetch(API_URL + '?type=monitoring_b2c')
     .then(res=>res.json())
@@ -68,10 +68,8 @@ function initMonitoringB2C(API_URL){
 
 <td class="clickable gaul_reg">${row[20]}</td>
 <td class="clickable gaul_hvc">${row[21]}</td>
-
-<td class="clickable sqm_total">${row[22]}</td>
-<td class="clickable sqm_open">${row[23]}</td>
-
+<td class="clickable sqm_jadi">${row[22]}</td>   
+<td class="clickable alert_jadi">${row[23]}</td>
 <td class="clickable ffg">${row[24]}</td>
 <td class="clickable sqm_total">${row[25]}</td>
 <td class="clickable sqm_open">${row[26]}</td>
@@ -109,7 +107,7 @@ function renderB2CTotalRow(){
   const tbody = document.getElementById('monitoring-b2c-body');
   tbody.querySelector('.total-row')?.remove();
 
-  const COL_COUNT = 28; // HARUS sama dengan jumlah <th>
+  const COL_COUNT = 27; // HARUS sama dengan jumlah <th>
   const total = new Array(COL_COUNT).fill(0);
 
   tbody.querySelectorAll('tr').forEach(tr=>{
