@@ -46,3 +46,29 @@
 #monitoring-b2c-body td.zero {
   color: #94a3b8;
 }
+
+/* =========================
+   FORCE LIGHT HOVER (FIX BLACK ROW)
+========================= */
+
+/* override hover dari JS inject */
+#monitoring-b2c-body tr:hover td {
+  background-color: #e0f2fe !important;
+  color: #1e293b !important;
+}
+
+/* disable dark hover from bootstrap table-dark */
+.table-dark tbody tr:hover td {
+  background-color: #e0f2fe !important;
+}
+
+/* clickable hover */
+#monitoring-b2c-body td.clickable:hover {
+  background-color: #bae6fd !important;
+}
+
+/* pastikan tidak ada row hitam */
+#monitoring-b2c-body tr {
+  background-color: transparent !important;
+}
+
